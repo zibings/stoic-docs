@@ -539,13 +539,13 @@ return out + &quot;&lt;/ul&gt;&quot;;
 									<div class="section-block">
 										<h6>Elegant Icon Font</h6>
 
-										<a href="https://www.elegantthemes.com/blog/resources/elegant-icon-font" target="_blank"><img class="img-fluid" src="assets/images/demo/elegant-icon-font.jpg" alt="elegant icons" /></a>
+										<a href="https://www.elegantthemes.com/blog/resources/elegant-icon-font" target="_blank"><img class="img-fluid" src="<?=$page->getAssetPath('~/assets/images/demo/elegant-icon-font.jpg')?>" alt="elegant icons" /></a>
 									</div><!--//section-block-->
 
 									<div class="section-block">
 										<h6>FontAwesome Icon Font</h6>
 
-										<a href="https://fortawesome.github.io/Font-Awesome/" target="_blank"><img class="img-fluid" src="assets/images/demo/fontawesome-icons.png" alt="fontawesome" /></a>
+										<a href="https://fortawesome.github.io/Font-Awesome/" target="_blank"><img class="img-fluid" src="<?=$page->getAssetPath('~/assets/images/demo/fontawesome-icons.png')?>" alt="fontawesome" /></a>
 									</div><!--//section-block-->
 								</section><!--//doc-section-->
 							</div><!--//content-inner-->
@@ -590,18 +590,18 @@ return out + &quot;&lt;/ul&gt;&quot;;
     
 		<footer id="footer" class="footer text-center">
 			<div class="container">
-				<small class="copyright">Copyright &copy; 2019 Zibings.com</small> |
+				<small class="copyright">Copyright &copy; 2019 Stoic Framework</small> |
 				<!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
 				<small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
 			</div><!--//container-->
 		</footer><!--//footer-->
 
 		<!-- Main Javascript -->          
-		<script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
-		<script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
-		<script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
-		<script type="text/javascript" src="assets/js/main.js"></script>
+		<script type="text/javascript" src="<?=$page->getAssetPath('~/assets/plugins/jquery-3.3.1.min.js')?>"></script>
+		<script type="text/javascript" src="<?=$page->getAssetPath('~/assets/plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+		<script type="text/javascript" src="<?=$page->getAssetPath('~/assets/plugins/prism/prism.js')?>"></script>    
+		<script type="text/javascript" src="<?=$page->getAssetPath('~/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js')?>"></script>      
+		<script type="text/javascript" src="<?=$page->getAssetPath('~/assets/plugins/stickyfill/dist/stickyfill.min.js')?>"></script>                                                             
+		<script type="text/javascript" src="<?=$page->getAssetPath('~/assets/js/main.js')?>"></script>
 	</body>
 </html>
