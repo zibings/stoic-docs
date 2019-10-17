@@ -12,7 +12,6 @@
 	$stoic = Stoic::getInstance('./');
 
 	$req = $stoic->getRequest();
-	$tpl = getTemplateEngine(['shared' => './tpl/shared']);
 	$page = PageHelper::getPage('index.php', $req->getGet(), $req->getPost(), $req->getRequest());
 
-	echo($tpl->render('shared::master', ['page' => $page]));
+	$page->redirectTo('~/php');
