@@ -35,7 +35,7 @@
 								<h3 class="title">Components</h3>
 								
 								<p class="intro">See the list of Stoic:PHP components and their documentation.</p>
-								<a class="link" href="<?=$page->getAssetPath('~/php/components.php')?>"><span></span></a>
+								<a class="link" href="<?=$page->getAssetPath('~/php/components')?>"><span></span></a>
 							</div><!--//item-inner-->
 						</div><!--//item-->
 						
@@ -47,8 +47,8 @@
 							
 								<h3 class="title">API Reference</h3>
 							
-								<p class="intro">Full reference documentation for all components and their contents.</p>
-								<a class="link" href="<?=$page->getAssetPath('~/php/reference.php')?>"><span></span></a>
+								<p class="intro">Full reference documentation for all components and their contents. (Coming Soon)</p>
+								<a class="link" href="javascript: void(0);"><span></span></a>
 							</div><!--//item-inner-->
 						</div><!--//item-->
 					</div><!--//cards-->
