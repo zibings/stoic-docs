@@ -5,7 +5,6 @@
 
 	require('vendor/autoload.php');
 
-	use function Stoic\Docs\Utilities\getTemplateEngine;
 	use Stoic\Web\PageHelper;
 	use Stoic\Web\Stoic;
 

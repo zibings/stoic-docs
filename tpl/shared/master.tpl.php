@@ -1,3 +1,10 @@
+<?php
+
+	if (!defined('PAGE_ROOT_PATH')) {
+		throw new \Exception("Page root path not defined, cannot render template");
+	}
+
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -49,8 +56,9 @@
 					</div><!--//branding-->
 
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="<?=$page->getAssetPath('~/index.php')?>">Home</a></li>
-						<li class="breadcrumb-item active">Quick Start</li>
+<?php if (isset($breadcrumbs) && count($breadcrumbs) > 0): ?><?php foreach ($breadcrumbs as $crumb): ?>						<li class="breadcrumb-item<?php if ($crumb['active']): ?> active<?php endif; ?>"><a href="<?=$page->getAssetPath(PAGE_ROOT_PATH, $crumb['queryVars'])?>"><?=$crumb['text']?></a></li>
+<?php endforeach; ?><?php endif; ?>
+
 					</ol>
 				</div><!--//container-->
 			</header><!--//header-->
