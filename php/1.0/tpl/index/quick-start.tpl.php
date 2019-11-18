@@ -2,7 +2,8 @@
 	'page' => $page,
 	'pageSection' => $pageSection ?? null,
 	'breadcrumbs' => [
-		['text' => 'Home', 'queryVars' => ['page' => 'toc'], 'active' => true]
+		['text' => 'Home', 'queryVars' => ['page' => 'toc'], 'active' => false],
+		['text' => 'Quick Start', 'queryVars' => ['page' => 'quick-start'], 'active' => true]
 	]
 ]); ?>
 
