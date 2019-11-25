@@ -31,91 +31,119 @@
 					<div class="doc-body row">
 						<div class="doc-content col-md-9 col-12 order-1">
 							<div class="content-inner">
-								<section id="download-section" class="doc-section">
-									<h2 class="section-title">Download</h2>
-									
-									<div class="section-block">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et dapibus feugiat <a href="#">link example</a> aenean purus leo, faucibus at elit vel, aliquet scelerisque dui. Etiam quis elit euismod, imperdiet augue sit amet, imperdiet odio. Aenean sem erat, hendrerit  eu gravida id, dignissim ut ante. Nam consequat porttitor libero euismod congue. 
-										</p>
-										<a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/prettydocs-free-bootstrap-theme-for-developers-and-startups/" class="btn btn-green" target="_blank"><i class="fas fa-download"></i> Download PrettyDocs</a>
-									</div>
-								</section><!--//doc-section-->
-
 								<section id="installation-section" class="doc-section">
 									<h2 class="section-title">Installation</h2>
-									
-									<div id="step1" class="section-block">
-										<h3 class="block-title">Step One</h3>
-											
+
+									<div class="section-block">
 										<p>
-											Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
+											Installation can be done using <a href="//getcomposer.org" target="_blank">Composer</a>/<a href="//packagist.org" target="_blank">Packagist</a>.  Simply enter the following commands in your shell
+											and all of the Stoic components will be installed for a website to be built:
 										</p>
+
 										<div class="code-block">
-											<h6>Default code example:</h6>
-											
-											<p><code>bower install &lt;package&gt;</code></p>
-											<p><code>npm install &lt;package&gt;</code></p>
-										</div><!--//code-block-->
-									</div><!--//section-block-->
+											<h6>Require 'Web' component with Composer:</h6>
 
-									<div id="step2"  class="section-block">
-										<h3 class="block-title">Step Two</h3>
+											<p>
+												<code>composer require stoic/web</code>
+											</p>
+										</div>
 
-										<p>
-											Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-										</p>
-										<div class="row">
-											<div class="col-md-6 col-12">
-												<h6>Un-ordered list example</h6>
+										<div class="code-block">
+											<h6>Initialize the default Stoic directories:</h6>
 
-												<ul class="list">
-													<li>Lorem ipsum dolor sit amet.</li>
-													<li>Aliquam tincidunt mauris.</li>
-													<li>
-														Ultricies eget vel aliquam libero.
-
-														<ul>
-															<li>Turpis pulvinar</li>
-															<li>Feugiat scelerisque</li>
-															<li>Ut tincidunt</li>
-														</ul>
-													</li>
-													<li>Pellentesque habitant morbi.</li>
-													<li>Praesent dapibus, neque id.</li>
-												</ul>
-											</div>
-
-											<div class="col-md-6 col-12">
-												<h6>Ordered list example</h6>
-
-												<ol class="list">
-													<li>Lorem ipsum dolor sit amet.</li>
-													<li>Aliquam tincidunt mauris.</li>
-													<li>
-														Ultricies eget vel aliquam libero.
-													
-														<ul>
-															<li>Turpis pulvinar</li>
-															<li>Feugiat scelerisque</li>
-															<li>Ut tincidunt</li>
-														</ul>
-													</li>
-													<li>Pellentesque habitant morbi.</li>
-													<li>Praesent dapibus, neque id.</li>
-												</ol>
-											</div>
-										</div><!--//row-->
-									</div><!--//section-block-->
-
-									<div id="step3"  class="section-block">
-										<h3 class="block-title">Step Three</h3>
-
-										<p>
-											Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
-										</p>
+											<p>
+												<code>vendor/bin/stoic-create</code>
+											</p>
+										</div>
 									</div><!--//section-block-->
 								</section><!--//doc-section-->
+
+								<section id="folder-structure" class="doc-section">
+									<h2 class="section-title">Folder Structure</h2>
+
+									<div class="section-block">
+										<p>
+											Stoic will have created the following folder structure for your project:
+										</p>
+
+										<div class="code-block">
+											<code>
+												~/inc/classes/<br />
+												~/inc/repositories/<br />
+												~/inc/utilities/<br />
+												~/index.php<br />
+												~/siteSettings.json
+											</code>
+										</div>
+									</div>
+
+									<div id="classes-folder" class="section-block">
+										<h6>Classes Folder</h6>
+
+										<p>
+											This folder should contain any class definitions.  Any files with the extension <code>.cls.php</code> in this folder will be automatically included when Stoic is loaded.
+										</p>
+
+										<p>
+											For more information on classes, click <a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-classes'])?>">here</a>.
+										</p>
+									</div>
+
+									<div id="repositories-folder" class="section-block">
+										<h6>Repositories Folder</h6>
+
+										<p>
+											This folder should contain any repository classes, which normally provide methods for returning data in the form of classes.
+											Any files with the extension <code>.rpo.php</code> in this folder will be automatically included when Stoic is loaded.
+										</p>
+
+										<p>
+											For more information on repositories, click <a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-repositories'])?>">here</a>.
+										</p>
+									</div>
+
+									<div id="utilities-folder" class="section-block">
+										<h6>Utilities Folder</h6>
+
+										<p>
+											This folder should contain any files that provide utility functionality for your site.
+											Any files with the extension <code>.utl.php</code> in this folder will be automatically included when Stoic is loaded.
+										</p>
+
+										<p>
+											For more information on utility files, click <a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-utilities'])?>">here</a>.
+										</p>
+									</div>
+
+									<div id="index-file" class="section-block">
+										<h6>Index File</h6>
+
+										<p>
+											This file is a quick example of how Stoic can be loaded and used as an entry-point for a website.
+										</p>
+
+										<p>
+											For more information on entry-points and Stoic, click <a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-entry-points'])?>">here</a>.
+										</p>
+									</div>
+
+									<div id="settings-file" class="section-block">
+										<h6>Settings File</h6>
+
+										<p>
+											The settings file <code>siteSettings.json</code> contains the default configuration values for the site.
+											The settings file is setup using the <a href="//github.com/AndyM84/config-migration" target="_blank">Config Migration</a> library.
+										</p>
+									</div>
+								</section>
+
+								<section id="example" class="doc-section">
+									<h2 class="section-title"><!-- TODO: Wtf do we do as an example here? --></h2>
+
+									<div class="section-block">
+										<!-- Still need to know what to do -->
+									</div>
+								</section>
                             
 								<section id="code-section" class="doc-section">
 									<h2 class="section-title">Code</h2>
@@ -508,14 +536,16 @@ return out + &quot;&lt;/ul&gt;&quot;;
 						<div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
 							<div id="doc-nav" class="doc-nav">
 								<nav id="doc-menu" class="nav doc-menu flex-column sticky">
-									<a class="nav-link scrollto" href="#download-section">Download</a>
 									<a class="nav-link scrollto" href="#installation-section">Installation</a>
+									<a class="nav-link scrollto" href="#folder-structure">Folder Structure</a>
 
 									<nav class="doc-sub-menu nav flex-column">
-										<a class="nav-link scrollto" href="#step1">Step One</a>
-										<a class="nav-link scrollto" href="#step2">Step Two</a>
-										<a class="nav-link scrollto" href="#step3">Step Three</a>
-									</nav><!--//nav-->
+										<a class="nav-link scrollto" href="#classes-folder">Classes</a>
+										<a class="nav-link scrollto" href="#repositories-folder">Repositories</a>
+										<a class="nav-link scrollto" href="#utilities-folder">Utilities</a>
+										<a class="nav-link scrollto" href="#index-file">Index</a>
+										<a class="nav-link scrollto" href="#settings-file">Settings</a>
+									</nav>
 
 									<a class="nav-link scrollto" href="#code-section">Code</a>
 

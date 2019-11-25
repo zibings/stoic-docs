@@ -3,31 +3,10 @@
 	"description": "Documentation site for the Stoic Framework",
 	"version": "1.0.0",
 	"homepage": "https://stoic-framework.com",
-	"repositories": [
-		{
-			"url": "https://github.com/zibings/stoic-php-core.git",
-			"type": "git"
-		},
-		{
-			"url": "https://github.com/zibings/stoic-php-io.git",
-			"type": "git"
-		},
-		{
-			"url": "https://github.com/zibings/stoic-php-pdo.git",
-			"type": "git"
-		},
-		{
-			"url": "https://github.com/zibings/stoic-php-web.git",
-			"type": "git"
-		}
-	],
 	"require": {
 		"php": "^7.2",
-		"stoic/stoic": "dev-master",
-		"stoic/io": "dev-master",
-		"stoic/pdo": "dev-master",
-		"stoic/web": "dev-master",
-		"league/plates": "^3.3"
+		"league/plates": "^3.3",
+		"stoic/web": "^1.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "^7"

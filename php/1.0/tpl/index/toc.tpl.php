@@ -38,14 +38,42 @@
 										<ul>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'quick-start'])?>">Quick Start</a></li>
 											<li>
+												<a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts'])?>">Concepts</a>
+
+												<ul>
+													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-classes'])?>">Classes</a></li>
+													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-repositories'])?>">Repositories</a></li>
+													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-utilities'])?>">Utilities</a></li>
+													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-entry-points'])?>">Entry-Points</a></li>
+												</ul>
+											</li>
+											<li>
 												<a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'components'])?>">Components</a>
 												<ul>
 													<li>
 														<a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'component-core'])?>">Core</a>
 														
 														<ul>
-															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-chains'])?>">Chains</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-logging'])?>">Logging</a></li>
+															<li>
+																<a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-chains'])?>">Chains</a>
+
+																<ul>
+																	<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-chains-dispatches'])?>">Dispatches</a></li>
+																	<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-chains-nodes'])?>">Nodes</a></li>
+																	<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-chains-chainhelper'])?>">ChainHelper</a></li>
+																	<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-chains-examples'])?>">Examples</a></li>
+																</ul>
+															</li>
+															<li>
+																<a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-logging'])?>">Logging</a>
+
+																<ul>
+																	<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-logging-logger'])?>">Logger</a></li>
+																	<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-logging-appenders'])?>">Appenders</a></li>
+																	<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-logging-messages'])?>">Messages</a></li>
+																	<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-logging-examples'])?>">Examples</a></li>
+																</ul>
+															</li>
 															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-returnhelper'])?>">ReturnHelper</a></li>
 															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-enumbase'])?>">EnumBase</a></li>
 														</ul>

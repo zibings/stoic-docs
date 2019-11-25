@@ -8,7 +8,7 @@
 						</p>
 
 						<div class="cta-container">
-							<a class="btn btn-primary btn-cta" href="<?=$page->getAssetPath('~/php/how-to-install.php')?>"><i class="fas fa-cloud-download-alt"></i> How To Install</a>
+							<a class="btn btn-primary btn-cta" href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'quick-start'])?>#installation-section"><i class="fas fa-cloud-download-alt"></i> How To Install</a>
 						</div><!--//cta-container-->
 					</div><!--//intro-->
 					
