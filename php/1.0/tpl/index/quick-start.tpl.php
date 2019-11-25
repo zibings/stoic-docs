@@ -179,6 +179,16 @@
 											Hello, World!<br />
 											I am ::1
 										</code>
+
+										<p class="mt-2">
+											If you visit the page and add <code>?magic_var=test</code>, the following will be produced:
+										</p>
+
+										<code>
+											Hello, World!<br />
+											I am ::1<br />
+											Secret Message: test
+										</code>
 									</div>
 								</section>
 
