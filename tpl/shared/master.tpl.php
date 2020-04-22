@@ -9,7 +9,7 @@
 
 <html lang="en">
 	<head>
-		<title><?=$page->getTitle()?></title>
+		<title><?=$title ?? 'Stoic Framework'?></title>
 
 		<!-- Meta -->
 		<meta charset="utf-8">

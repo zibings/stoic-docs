@@ -1,4 +1,8 @@
-<?php $this->layout('shared::landing-master', ['page' => $page, 'pageSection' => $pageSection ?? null]); ?>
+<?php $this->layout('shared::landing-master', [
+	'page' => $page,
+	'pageSection' => $pageSection ?? null,
+	'title' => 'Stoic:PHP'
+]); ?>
 
 					<h2 class="title">Getting started is easy!</h2>
 					

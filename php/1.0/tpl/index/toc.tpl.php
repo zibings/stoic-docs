@@ -4,7 +4,8 @@
 	'breadcrumbs' => [
 		['text' => 'Home', 'queryVars' => [], 'active' => false],
 		['text' => 'Table of Contents', 'queryVars' => ['page' => 'toc'], 'active' => true]
-	]
+	],
+	'title' => 'Stoic:PHP - Table of Contents'
 ]); ?>
 
 					<div id="doc-header" class="doc-header text-center">
@@ -41,10 +42,11 @@
 												<a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts'])?>">Concepts</a>
 
 												<ul>
-													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-classes'])?>">Classes</a></li>
-													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-repositories'])?>">Repositories</a></li>
-													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-utilities'])?>">Utilities</a></li>
-													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts-entry-points'])?>">Entry-Points</a></li>
+													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts'])?>#concept-classes">Classes</a></li>
+													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts'])?>#concept-repositories">Repositories</a></li>
+													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts'])?>#concept-utilities">Utilities</a></li>
+													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts'])?>#concept-entry-points">Entry-Points</a></li>
+													<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts'])?>#concept-load-order">Load Order/Settings</a></li>
 												</ul>
 											</li>
 											<li>

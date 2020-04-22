@@ -4,7 +4,8 @@
 	'breadcrumbs' => [
 		['text' => 'Home', 'queryVars' => ['page' => 'toc'], 'active' => false],
 		['text' => 'Components', 'queryVars' => ['page' => 'components'], 'active' => true]
-	]
+	],
+	'title' => 'Stoic:PHP - Components'
 ]); ?>
 
 					<div id="doc-header" class="doc-header text-center">

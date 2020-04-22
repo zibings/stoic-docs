@@ -4,7 +4,8 @@
 	'breadcrumbs' => [
 		['text' => 'Home', 'queryVars' => ['page' => 'toc'], 'active' => false],
 		['text' => 'Quick Start', 'queryVars' => ['page' => 'quick-start'], 'active' => true]
-	]
+	],
+	'title' => 'Stoic:PHP - Quick Start'
 ]); ?>
 
 					<div id="doc-header" class="doc-header text-center">

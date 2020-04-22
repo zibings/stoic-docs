@@ -3,7 +3,8 @@
 	'pageSection' => $pageSection ?? null,
 	'breadcrumbs' => [
 		['text' => 'Home', 'queryVars' => ['page' => 'toc'], 'active' => true]
-	]
+	],
+	'title' => 'Stoic:PHP'
 ]); ?>
 
 					<div id="doc-header" class="doc-header text-center">
