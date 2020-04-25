@@ -1455,3 +1455,47 @@ select {
     width: 560px;
   }
 }
+
+/* Stoic Documentation Styles */
+
+p.properties {
+  font-style: italic;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p.properties span.type {
+  font-weight: 100;
+  color: #75c181;
+}
+
+p.properties span.prop {
+  font-weight: 600;
+}
+
+p.properties span.prop-desc {
+  font-style: normal;
+  display: block;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}
+
+p.methods {
+  font-style: italic;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p.methods span.type {
+  font-weight: 200;
+  color: #75c181;
+}
+
+p.methods span.method {
+  font-weight: 600;
+}
+
+p.methods span.method-desc {
+  font-style: normal;
+  display: block;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}
