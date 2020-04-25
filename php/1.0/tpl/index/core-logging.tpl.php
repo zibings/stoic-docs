@@ -4,15 +4,14 @@
 	'breadcrumbs' => [
 		['text' => 'Home', 'queryVars' => ['page' => 'toc'], 'active' => false],
 		['text' => 'Core Component', 'queryVars' => ['page' => 'component-core'], 'active' => false],
-		['text' => 'Chains', 'queryVars' => ['page' => 'core-chains'], 'active' => false],
-		['text' => 'Examples', 'queryVars' => ['page' => 'core-chains-examples'], 'active' => true]
+		['text' => 'Logger', 'queryVars' => ['page' => 'core-logger'], 'active' => true]
 	],
-	'title' => 'Stoic:PHP - Chain Examples'
+	'title' => 'Stoic:PHP - Logger'
 ]); ?>
 
 <?php $this->insert('shared::doc-header', [
 	'pageFile' => __FILE__,
-	'docTitle' => 'Chain Examples'
+	'docTitle' => 'Logging'
 ]); ?>
 					
 					<div class="doc-body row">
@@ -275,7 +274,7 @@ $stopChain->traverse($offsetDispatch);
 
 									<div class="section-block">
 										<p>
-											Continue to read about <a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-logging'])?>">logging</a>,
+											Continue to read about <a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'core-logging'])?>">examples</a>,
 											or visit the <a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'toc'])?>">Table of Contents</a>.
 										</p>
 									</div>
