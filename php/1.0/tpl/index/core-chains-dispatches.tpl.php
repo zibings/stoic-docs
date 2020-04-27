@@ -87,11 +87,14 @@
 										protected <span class="type">boolean</span> <span class="prop">$_isConsumed</span>
 										<span class="prop-desc">Whether or not the dispatch has been consumed by a node</span>
 
-										protected <span class="type">array&lt;mixed&gt;</span> <span class="prop">$_results</span>
+										protected <span class="type">mixed[]</span> <span class="prop">$_results</span>
 										<span class="prop-desc">Collection of results from processing nodes</span>
 
 										protected <span class="type">boolean</span> <span class="prop">$_isValid</span>
 										<span class="prop-desc">Whether or not the dispatch is valid for processing</span>
+
+										protected <span class="type">DateTimeInterface</span> <span class="prop">$_calledDateTime</span>
+										<span class="prop-desc">Date and time the dispatch was marked valid</span>
 									</p>
 
 									<h5>Methods</h5>
@@ -102,11 +105,11 @@
 										public <span class="type">boolean</span> <span class="method">consume()</span>
 										<span class="method-desc">Marks dispatch as having been consumed</span>
 
-										public <span class="type">DateTime</span> <span class="method">getCalledDateTime()</span>
+										public <span class="type">DateTimeInterface</span> <span class="method">getCalledDateTime()</span>
 										<span class="method-desc">Returns the date and time the dispatch was marked valid</span>
 
-										public <span class="type">array&lt;mixed&gt;|null</span> <span class="method">getResults()</span>
-										<span class="method-desc">Returns any results stored in dispatch, null if none</span>
+										public <span class="type">mixed[]|mixed|null</span> <span class="method">getResults()</span>
+										<span class="method-desc">Returns any results stored in dispatch, single result if one, array of results if many, null if none</span>
 
 										abstract public <span class="type">void</span> <span class="method">initialize(<span class="type">mixed</span> $input)</span>
 										<span class="method-desc">Abstract method that dispatch classes should use to handle initialization</span>

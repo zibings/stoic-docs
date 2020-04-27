@@ -47,7 +47,7 @@
 
 									<h5>Properties</h5>
 									<p class="properties">
-										protected <span class="type">array&lt;NodeBase&gt;</span> <span class="prop">$_nodes</span>
+										protected <span class="type">array</span> <span class="prop">$_nodes</span>
 										<span class="prop-desc">Internal collection of linked nodes</span>
 
 										protected <span class="type">boolean</span> <span class="prop">$_isEvent</span>
@@ -68,10 +68,10 @@
 										public <span class="type">ChainHelper</span> <span class="method">toggleDebug(<span class="type">boolean</span> $doDebug)</span>
 										<span class="method-desc">Toggles use of debug messages/callback for instance</span>
 
-										public <span class="type">array&lt;NodeBase&gt;</span> <span class="method">getNodeList()</span>
+										public <span class="type">array</span> <span class="method">getNodeList()</span>
 										<span class="method-desc">Returns full list of nodes linked to chain</span>
 
-										public <span class="type">boolean</span> <span class="method">hookLogger(<span class="type">callable</span> $callback)</span>
+										public <span class="type">void</span> <span class="method">hookLogger(<span class="type">callable</span> $callback)</span>
 										<span class="method-desc">Attaches the given callback to the instance so it can receive debug messages, if toggled</span>
 
 										public <span class="type">boolean</span> <span class="method">isEvent()</span>

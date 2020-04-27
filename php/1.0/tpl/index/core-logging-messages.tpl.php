@@ -44,7 +44,7 @@
 											public <span class="type">string</span> <span class="prop">$message</span>
 											<span class="prop-desc">Interpolated string value of log message</span>
 
-											private <span class="type">DateTimeImmutable</span> <span class="prop">$timestamp</span>
+											private <span class="type">DateTimeInterface</span> <span class="prop">$timestamp</span>
 											<span class="prop-desc">Immutable DateTime value marking when the message was generated (incl. microseconds)</span>
 
 											private static <span class="type">array</span> <span class="prop">$validLevels</span>
@@ -57,7 +57,7 @@
 											public <span class="type">Message</span> <span class="method">__construct(<span class="type">string</span> $level, <span class="type">string</span> $message)</span>
 											<span class="method-desc">Instantiates a new Message object, validating the log level and marking the timestamp</span>
 
-											public <span class="type">DateTimeImmutable</span> <span class="method">getTimestamp()</span>
+											public <span class="type">DateTimeInterface</span> <span class="method">getTimestamp()</span>
 											<span class="method-desc">Returns the immutable timestamp value so it can't be overwritten</span>
 
 											public <span class="type">string[]</span> <span class="method">__toArray()</span>

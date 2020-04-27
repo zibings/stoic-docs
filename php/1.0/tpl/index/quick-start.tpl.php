@@ -182,8 +182,8 @@
 
 									<div class="section-block">
 										<p>
-											Continue to read about <a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'concepts'])?>">concepts</a> used within Stoic, or visit the
-											<a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read <a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'information'])?>">general information</a>
+											about Stoic:PHP, or visit the <a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'toc'])?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>
