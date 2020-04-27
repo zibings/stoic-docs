@@ -1482,6 +1482,7 @@ p.properties span.prop-desc {
 p.methods {
   font-style: italic;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 30px;
 }
 
 p.methods span.type {
