@@ -91,21 +91,13 @@
 														<a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'component-web'])?>">Web</a>
 														
 														<ul>
-															<li>
-																<a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-api'])?>">API Helpers</a>
-
-																<ul>
-																	<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-api-basedbapi'])?>">BaseDbApi</a></li>
-																	<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-api-response'])?>">Response</a></li>
-																	<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-api-stoic'])?>">Stoic</a></li>
-																</ul>
-															</li>
+															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-stoic'])?>">Stoic</a></li>
+															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-request'])?>">Request</a></li>
 															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-fileuploadhelper'])?>">FileUploadHelper</a></li>
 															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-htmlelementhelper'])?>">HtmlElementHelper</a></li>
 															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-pagehelper'])?>">PageHelper</a></li>
 															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-paginatehelper'])?>">PaginateHelper</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-request'])?>">Request</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-stoic'])?>">Stoic</a></li>
+															<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'web-api'])?>">API Helpers</a></li>
 														</ul>
 													</li>
 												</ul>

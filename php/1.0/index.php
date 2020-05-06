@@ -20,6 +20,8 @@
 	$tpl = getTemplateEngine(['shared' => CORE_PATH . 'tpl/shared', 'page' => './tpl/index']);
 	$page = PageHelper::getPage('php/1.0/index.php', $req->getGet(), $req->getPost(), $req->getRequest());
 
+	$page->setTitle('Page');
+
 	foreach ($stoic->getFileHelper()->getFolderFiles('~/php/1.0/tpl/index/') as $file) {
 		if (substr($file, -8) == '.tpl.php') {
 			$validPages[str_replace(['.tpl.php', CORE_PATH . 'php/1.0/tpl/index/'], '', $file)] = true;
