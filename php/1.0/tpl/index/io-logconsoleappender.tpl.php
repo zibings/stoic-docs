@@ -3,7 +3,7 @@
 	'pageSection' => $pageSection ?? null,
 	'breadcrumbs' => [
 		['text' => 'Home', 'queryVars' => ['page' => 'toc'], 'active' => false],
-		['text' => 'I/O Component', 'queryVars' => ['page' => 'component-core'], 'active' => false],
+		['text' => 'I/O Component', 'queryVars' => ['page' => 'component-io'], 'active' => false],
 		['text' => 'LogConsoleAppender', 'queryVars' => ['page' => 'io-logconsoleappender'], 'active' => true]
 	],
 	'title' => 'Stoic:PHP - LogConsoleAppender'
