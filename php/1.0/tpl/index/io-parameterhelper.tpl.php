@@ -27,12 +27,22 @@
 								</section>
 
 								<section id="parameterhelper-methods" class="doc-section">
-									<h2 class="section-title">Methods</h2>
+									<h2 class="section-title">Example</h2>
 
-									<div class="section-block">
-										<p class="methods">
-											[COMING SOON]
-										</p>
+									<div class="code-block">
+										<pre class="language-php"><code>use Stoic\Utilities\ParameterHelper;
+
+$ph = new ParameterHelper($_POST);
+
+if ($ph->has('someVar')) {
+	echo($ph->get('someVar')); // retrieves the raw parameter
+}
+
+if ($ph->hasAll('stringVar', 'intVar')) {
+	echo($ph->getString('stringVar'));
+	echo($ph->getInt('intVar'));
+}
+</code></pre>
 									</div>
 								</section>
 
@@ -42,7 +52,7 @@
 									<div class="section-block">
 										<ul>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-consolehelper'])?>">ConsoleHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-filehelper'])?>">FileHelper</a></li>
+											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-filehelper-examples'])?>">FileHelper</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-logconsoleappender'])?>">LogConsoleAppender</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-logfileappender'])?>">LogFileAppender</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-sanitationhelper'])?>">SanitationHelper</a></li>

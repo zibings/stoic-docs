@@ -47,7 +47,7 @@
 														<td>Utility that generalizes some functionality around user interaction on the command line</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-filehelper'])?>">FileHelper</a></td>
+														<td><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-filehelper-examples'])?>">FileHelper</a></td>
 														<td>Utility with helper methods for common filesystem operations</td>
 													</tr>
 													<tr>

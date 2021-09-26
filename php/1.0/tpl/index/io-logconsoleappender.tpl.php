@@ -26,22 +26,27 @@
 								</section>
 
 								<section id="logconsoleappender-properties" class="doc-section">
-									<h2 class="section-title">Properties</h2>
+									<h2 class="section-title">Example</h2>
 
-									<div class="section-block">
-										<p>
-											[COMING SOON]
-										</p>
-									</div>
-								</section>
+									<div class="code-block">
+										<pre class="language-php"><code>use Stoic\Log\Logger;
+use Stoic\Utilities\ConsoleHelper;
+use Stoic\Utilities\LogConsoleAppender;
 
-								<section id="logconsoleappender-methods" class="doc-section">
-									<h2 class="section-title">Methods</h2>
+$log = new Logger();
+$ch  = new ConsoleHelper();
+$log->addAppender(new LogConsoleAppender($ch));
 
-									<div class="section-block">
-										<p class="methods">
-											[COMING SOON]
-										</p>
+$log->info("Testing log info output");
+
+$log->output();
+
+/*
+		Logger will now output to STDOUT (date format is displayed in UTC time):
+
+Y-m-d G:i:s.u INFO     Testing log info output
+*/
+</code></pre>
 									</div>
 								</section>
 
@@ -51,7 +56,7 @@
 									<div class="section-block">
 										<ul>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-consolehelper'])?>">ConsoleHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-filehelper'])?>">FileHelper</a></li>
+											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-filehelper-examples'])?>">FileHelper</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-logfileappender'])?>">LogFileAppender</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-parameterhelper'])?>">ParameterHelper</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-sanitationhelper'])?>">SanitationHelper</a></li>

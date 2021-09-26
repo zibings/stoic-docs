@@ -27,22 +27,15 @@
 								</section>
 
 								<section id="stringhelper-properties" class="doc-section">
-									<h2 class="section-title">Properties</h2>
+									<h2 class="section-title">Example</h2>
 
-									<div class="section-block">
-										<p class="methods">
-											[COMING SOON]
-										</p>
-									</div>
-								</section>
+									<div class="code-block">
+										<pre class="language-php"><code>use Stoic\Utilities\StringHelper;
 
-								<section id="stringhelper-methods" class="doc-section">
-									<h2 class="section-title">Methods</h2>
-
-									<div class="section-block">
-										<p class="methods">
-											[COMING SOON]
-										</p>
+$str = new StringHelper('Robert');
+$str->replaceOnce('R', 'B'); // string is now 'Bobert'
+echo($str->subString(0, 3); // prints out 'Bob'
+</code></pre>
 									</div>
 								</section>
 
@@ -52,7 +45,7 @@
 									<div class="section-block">
 										<ul>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-consolehelper'])?>">ConsoleHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-filehelper'])?>">FileHelper</a></li>
+											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-filehelper-examples'])?>">FileHelper</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-logconsoleappender'])?>">LogConsoleAppender</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-logfileappender'])?>">LogFileAppender</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-parameterhelper'])?>">ParameterHelper</a></li>

@@ -27,22 +27,26 @@
 								</section>
 
 								<section id="sanitationhelper-properties" class="doc-section">
-									<h2 class="section-title">Properties</h2>
+									<h2 class="section-title">Example</h2>
 
-									<div class="section-block">
-										<p class="methods">
-											[COMING SOON]
-										</p>
-									</div>
-								</section>
+									<div class="code-block">
+										<pre class="language-php"><code>use Stoic\Utilities\SanitationHelper;
+use Stoic\Utilities\Sanitizers;
 
-								<section id="sanitationhelper-methods" class="doc-section">
-									<h2 class="section-title">Methods</h2>
+// This sanitizer turns EVERYTHING into the string "Bob"
+class BobSanitizer implements SanitizerInterface {
+	public function sanitize($input) {
+		return "Bob";
+	}
+}
 
-									<div class="section-block">
-										<p class="methods">
-											[COMING SOON]
-										</p>
+$sani = new SanitationHelper();
+$sani->addSanitizer('bob', BobSanitizer::class);
+
+echo($sani->sanitize(23, 'bob'));       // Bob
+echo($sani->sanitize(true, 'bob'));     // Bob
+echo($sani->sanitize('Robert', 'bob')); // Bob!
+</code></pre>
 									</div>
 								</section>
 
@@ -52,7 +56,7 @@
 									<div class="section-block">
 										<ul>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-consolehelper'])?>">ConsoleHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-filehelper'])?>">FileHelper</a></li>
+											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-filehelper-examples'])?>">FileHelper</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-logconsoleappender'])?>">LogConsoleAppender</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-logfileappender'])?>">LogFileAppender</a></li>
 											<li><a href="<?=$page->getAssetPath('~/php/1.0/', ['page' => 'io-parameterhelper'])?>">ParameterHelper</a></li>
