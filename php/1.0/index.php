@@ -3,8 +3,8 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', 'On');
 
-	define('CORE_PATH', '../../');
-	define('PAGE_ROOT_PATH', '~/php/1.0/');
+	const CORE_PATH = '../../';
+	const PAGE_ROOT_PATH = '~/php/1.0/';
 	require(CORE_PATH . 'vendor/autoload.php');
 
 	use function Stoic\Docs\Utilities\getTemplateEngine;
@@ -23,7 +23,7 @@
 	$page->setTitle('Page');
 
 	foreach ($stoic->getFileHelper()->getFolderFiles('~/php/1.0/tpl/index/') as $file) {
-		if (substr($file, -8) == '.tpl.php') {
+		if (str_ends_with($file, '.tpl.php')) {
 			$validPages[str_replace(['.tpl.php', CORE_PATH . 'php/1.0/tpl/index/'], '', $file)] = true;
 		}
 	}

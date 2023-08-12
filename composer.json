@@ -1,11 +1,11 @@
 {
 	"name": "stoic/docs",
 	"description": "Documentation site for the Stoic Framework",
-	"version": "1.0.0",
+	"version": "1.2.0",
 	"homepage": "https://stoic-framework.com",
 	"require": {
-		"php": "^7.2",
+		"php": "^8.2",
 		"league/plates": "^3.3",
-		"stoic/web": "^1.0"
+		"stoic/web": "^1.2"
 	}
 }
