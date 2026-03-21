@@ -12,7 +12,7 @@
 							<div class="h-100">
 								<div class="dropdown">
 									<button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="versionDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										v1.0
+										v1.4
 									</button>
 								</div>
 							</div>

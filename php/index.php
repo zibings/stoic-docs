@@ -13,4 +13,4 @@
 	$req = $stoic->getRequest();
 	$page = PageHelper::getPage('index.php', $req->getGet(), $req->getPost(), $req->getRequest());
 
-	$page->redirectTo('~/1.0/');
+	$page->redirectTo('~/1.4/');
