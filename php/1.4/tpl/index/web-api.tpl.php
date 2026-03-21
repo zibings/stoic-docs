@@ -309,7 +309,7 @@ echo $code->getDescription(); // "Not Found"
 
 									<div class="section-block">
 										<p>
-											Visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>
+											Visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>
 											to explore other components.
 										</p>
 									</div>

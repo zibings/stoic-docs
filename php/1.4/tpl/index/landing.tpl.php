@@ -12,7 +12,7 @@
 						</p>
 
 						<div class="cta-container">
-							<a class="btn btn-primary btn-cta" href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'quick-start'])?>#installation-section"><i class="fas fa-cloud-download-alt"></i> How To Install</a>
+							<a class="btn btn-primary btn-cta" href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'quick-start']))?>#installation-section"><i class="fas fa-cloud-download-alt"></i> How To Install</a>
 						</div><!--//cta-container-->
 					</div><!--//intro-->
 					
@@ -26,7 +26,7 @@
 								<h3 class="title">Web Quick Start</h3>
 								
 								<p class="intro">The absolute basics to starting a new website with Stoic:PHP.</p>
-								<a class="link" href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'quick-start'])?>"><span></span></a>
+								<a class="link" href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'quick-start']))?>"><span></span></a>
 							</div><!--//item-inner-->
 						</div><!--//item-->
 						
@@ -39,7 +39,7 @@
 								<h3 class="title">Components</h3>
 								
 								<p class="intro">See the list of Stoic:PHP components and their documentation.</p>
-								<a class="link" href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'components'])?>"><span></span></a>
+								<a class="link" href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'components']))?>"><span></span></a>
 							</div><!--//item-inner-->
 						</div><!--//item-->
 						
@@ -52,7 +52,7 @@
 								<h3 class="title">All Contents</h3>
 							
 								<p class="intro">Full reference documentation for all components and their contents.</p>
-								<a class="link" href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>"><span></span></a>
+								<a class="link" href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>"><span></span></a>
 							</div><!--//item-inner-->
 						</div><!--//item-->
 					</div><!--//cards-->

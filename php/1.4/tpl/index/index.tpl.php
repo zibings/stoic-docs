@@ -477,13 +477,13 @@ return out + &quot;&lt;/ul&gt;&quot;;
 									<div class="section-block">
 										<h6>Elegant Icon Font</h6>
 
-										<a href="https://www.elegantthemes.com/blog/resources/elegant-icon-font" target="_blank"><img class="img-fluid" src="<?=$page->getAssetPath('~/assets/images/demo/elegant-icon-font.jpg')?>" alt="elegant icons" /></a>
+										<a href="https://www.elegantthemes.com/blog/resources/elegant-icon-font" target="_blank"><img class="img-fluid" src="<?=$this->localUrl($page->getAssetPath('~/assets/images/demo/elegant-icon-font.jpg'))?>" alt="elegant icons" /></a>
 									</div><!--//section-block-->
 
 									<div class="section-block">
 										<h6>FontAwesome Icon Font</h6>
 
-										<a href="https://fortawesome.github.io/Font-Awesome/" target="_blank"><img class="img-fluid" src="<?=$page->getAssetPath('~/assets/images/demo/fontawesome-icons.png')?>" alt="fontawesome" /></a>
+										<a href="https://fortawesome.github.io/Font-Awesome/" target="_blank"><img class="img-fluid" src="<?=$this->localUrl($page->getAssetPath('~/assets/images/demo/fontawesome-icons.png'))?>" alt="fontawesome" /></a>
 									</div><!--//section-block-->
 								</section><!--//doc-section-->
 							</div><!--//content-inner-->

@@ -22,83 +22,83 @@
 									<div class="section-block">
 										<ul>
 											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'quick-start']))?>">Quick Start</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'information'])?>">General Information</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'information']))?>">General Information</a></li>
 											<li>
-												<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'concepts'])?>">Concepts</a>
+												<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'concepts']))?>">Concepts</a>
 
 												<ul>
-													<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'concepts'])?>#concept-classes">Classes</a></li>
-													<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'concepts'])?>#concept-repositories">Repositories</a></li>
-													<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'concepts'])?>#concept-utilities">Utilities</a></li>
-													<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'concepts'])?>#concept-entry-points">Entry-Points</a></li>
-													<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'concepts'])?>#concept-load-order">Load Order/Settings</a></li>
+													<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'concepts']))?>#concept-classes">Classes</a></li>
+													<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'concepts']))?>#concept-repositories">Repositories</a></li>
+													<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'concepts']))?>#concept-utilities">Utilities</a></li>
+													<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'concepts']))?>#concept-entry-points">Entry-Points</a></li>
+													<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'concepts']))?>#concept-load-order">Load Order/Settings</a></li>
 												</ul>
 											</li>
 											<li>
-												<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'components'])?>">Components</a>
+												<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'components']))?>">Components</a>
 												<ul>
 													<li>
-														<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'component-core'])?>">Core</a>
+														<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'component-core']))?>">Core</a>
 														
 														<ul>
 															<li>
-																<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains'])?>">Chains</a>
+																<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains']))?>">Chains</a>
 
 																<ul>
-																	<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-dispatches'])?>">Dispatches</a></li>
-																	<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-nodes'])?>">Nodes</a></li>
-																	<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-chainhelper'])?>">ChainHelper</a></li>
-																	<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-examples'])?>">Examples</a></li>
+																	<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-dispatches']))?>">Dispatches</a></li>
+																	<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-nodes']))?>">Nodes</a></li>
+																	<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-chainhelper']))?>">ChainHelper</a></li>
+																	<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-examples']))?>">Examples</a></li>
 																</ul>
 															</li>
 															<li>
-																<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-logging'])?>">Logging</a>
+																<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-logging']))?>">Logging</a>
 
 																<ul>
-																	<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-logger'])?>">Logger</a></li>
-																	<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-appenders'])?>">Appenders</a></li>
-																	<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-messages'])?>">Messages</a></li>
-																	<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-examples'])?>">Examples</a></li>
+																	<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-logger']))?>">Logger</a></li>
+																	<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-appenders']))?>">Appenders</a></li>
+																	<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-messages']))?>">Messages</a></li>
+																	<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-examples']))?>">Examples</a></li>
 																</ul>
 															</li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-returnhelper'])?>">ReturnHelper</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-enumbase'])?>">EnumBase</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-returnhelper']))?>">ReturnHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-enumbase']))?>">EnumBase</a></li>
 														</ul>
 													</li>
 													<li>
-														<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'component-io'])?>">I/O</a>
+														<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'component-io']))?>">I/O</a>
 														
 														<ul>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-cliscripthelper'])?>">CliScriptHelper</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-consolehelper'])?>">ConsoleHelper</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-filehelper'])?>">FileHelper</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-logconsoleappender'])?>">LogConsoleAppender</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-logfileappender'])?>">LogFileAppender</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-parameterhelper'])?>">ParameterHelper</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-sanitationhelper'])?>">SanitationHelper</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-stringhelper'])?>">StringHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-cliscripthelper']))?>">CliScriptHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-consolehelper']))?>">ConsoleHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-filehelper']))?>">FileHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-logconsoleappender']))?>">LogConsoleAppender</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-logfileappender']))?>">LogFileAppender</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-parameterhelper']))?>">ParameterHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-sanitationhelper']))?>">SanitationHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-stringhelper']))?>">StringHelper</a></li>
 														</ul>
 													</li>
 													<li>
-														<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'component-pdo'])?>">PDO</a>
+														<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'component-pdo']))?>">PDO</a>
 														
 														<ul>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'pdo-basedbclass'])?>">BaseDbClass</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'pdo-basedbmodel'])?>">BaseDbModel</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'pdo-pdohelper'])?>">PdoHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'pdo-basedbclass']))?>">BaseDbClass</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'pdo-basedbmodel']))?>">BaseDbModel</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'pdo-pdohelper']))?>">PdoHelper</a></li>
 														</ul>
 													</li>
 													<li>
-														<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'component-web'])?>">Web</a>
+														<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'component-web']))?>">Web</a>
 														
 														<ul>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-stoic'])?>">Stoic</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-request'])?>">Request</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-fileuploadhelper'])?>">FileUploadHelper</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-htmlelementhelper'])?>">HtmlElementHelper</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-pagehelper'])?>">PageHelper</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-paginatehelper'])?>">PaginateHelper</a></li>
-															<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-api'])?>">API Helpers</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-stoic']))?>">Stoic</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-request']))?>">Request</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-fileuploadhelper']))?>">FileUploadHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-htmlelementhelper']))?>">HtmlElementHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-pagehelper']))?>">PageHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-paginatehelper']))?>">PaginateHelper</a></li>
+															<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-api']))?>">API Helpers</a></li>
 														</ul>
 													</li>
 												</ul>

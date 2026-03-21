@@ -43,12 +43,12 @@ if ($fh->folderExists('~/files') && $fh->fileExists('~/files/myFile.txt')) {
 
 									<div class="section-block">
 										<ul>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-consolehelper'])?>">ConsoleHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-logconsoleappender'])?>">LogConsoleAppender</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-logfileappender'])?>">LogFileAppender</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-parameterhelper'])?>">ParameterHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-sanitationhelper'])?>">SanitationHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-stringhelper'])?>">StringHelper</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-consolehelper']))?>">ConsoleHelper</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-logconsoleappender']))?>">LogConsoleAppender</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-logfileappender']))?>">LogFileAppender</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-parameterhelper']))?>">ParameterHelper</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-sanitationhelper']))?>">SanitationHelper</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-stringhelper']))?>">StringHelper</a></li>
 										</ul>
 									</div>
 								</section>
@@ -58,8 +58,8 @@ if ($fh->folderExists('~/files') && $fh->fileExists('~/files/myFile.txt')) {
 
 									<div class="section-block">
 										<p>
-											Continue to read about <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-logconsoleappender'])?>">LogconsoleAppender</a>,
-											or visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read about <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-logconsoleappender']))?>">LogconsoleAppender</a>,
+											or visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>

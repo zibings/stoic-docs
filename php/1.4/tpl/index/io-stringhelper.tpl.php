@@ -132,11 +132,11 @@ $str->isEmptyOrNull();            // false
 
 									<div class="section-block">
 										<ul>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-cliscripthelper'])?>">CliScriptHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-consolehelper'])?>">ConsoleHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-filehelper-examples'])?>">FileHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-parameterhelper'])?>">ParameterHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-sanitationhelper'])?>">SanitationHelper</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-cliscripthelper']))?>">CliScriptHelper</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-consolehelper']))?>">ConsoleHelper</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-filehelper-examples']))?>">FileHelper</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-parameterhelper']))?>">ParameterHelper</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-sanitationhelper']))?>">SanitationHelper</a></li>
 										</ul>
 									</div>
 								</section>
@@ -146,8 +146,8 @@ $str->isEmptyOrNull();            // false
 
 									<div class="section-block">
 										<p>
-											Continue to read about the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'component-pdo'])?>">PDO</a> component,
-											or visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read about the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'component-pdo']))?>">PDO</a> component,
+											or visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>

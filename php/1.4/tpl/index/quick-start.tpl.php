@@ -70,7 +70,7 @@
 										</p>
 
 										<p>
-											For more information on classes, click <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'concepts'])?>">here</a>.
+											For more information on classes, click <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'concepts']))?>">here</a>.
 										</p>
 									</div>
 
@@ -83,7 +83,7 @@
 										</p>
 
 										<p>
-											For more information on repositories, click <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'concepts'])?>">here</a>.
+											For more information on repositories, click <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'concepts']))?>">here</a>.
 										</p>
 									</div>
 
@@ -96,7 +96,7 @@
 										</p>
 
 										<p>
-											For more information on utility files, click <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'concepts'])?>">here</a>.
+											For more information on utility files, click <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'concepts']))?>">here</a>.
 										</p>
 									</div>
 
@@ -108,7 +108,7 @@
 										</p>
 
 										<p>
-											For more information on entry-points and Stoic, click <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'concepts'])?>">here</a>.
+											For more information on entry-points and Stoic, click <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'concepts']))?>">here</a>.
 										</p>
 									</div>
 
@@ -184,8 +184,8 @@
 
 									<div class="section-block">
 										<p>
-											Continue to read <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'information'])?>">general information</a>
-											about Stoic:PHP, or visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'information']))?>">general information</a>
+											about Stoic:PHP, or visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>

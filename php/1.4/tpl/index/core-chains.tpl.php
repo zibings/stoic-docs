@@ -124,10 +124,10 @@
 
 									<div class="section-block">
 										<ul>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-dispatches'])?>">Dispatches</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-nodes'])?>">Nodes</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-chainhelper'])?>">ChainHelper</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-examples'])?>">Examples</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-dispatches']))?>">Dispatches</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-nodes']))?>">Nodes</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-chainhelper']))?>">ChainHelper</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-examples']))?>">Examples</a></li>
 										</ul>
 									</div>
 								</section>
@@ -137,8 +137,8 @@
 
 									<div class="section-block">
 										<p>
-											Continue to read about <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-dispatches'])?>">dispatches</a>,
-											or visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read about <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains-dispatches']))?>">dispatches</a>,
+											or visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>

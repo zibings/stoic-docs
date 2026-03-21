@@ -43,35 +43,35 @@
 												</thead>
 												<tbody>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-cliscripthelper'])?>">CliScriptHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-cliscripthelper']))?>">CliScriptHelper</a></td>
 														<td>Helper class that combines common CLI script actions like option parsing, validation, and help output</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-consolehelper'])?>">ConsoleHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-consolehelper']))?>">ConsoleHelper</a></td>
 														<td>Utility that generalizes some functionality around user interaction on the command line</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-filehelper-examples'])?>">FileHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-filehelper-examples']))?>">FileHelper</a></td>
 														<td>Utility with helper methods for common filesystem operations</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-logconsoleappender'])?>">LogConsoleAppender</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-logconsoleappender']))?>">LogConsoleAppender</a></td>
 														<td>Logging appender that outputs messages to STDOUT</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-logfileappender'])?>">LogFileAppender</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-logfileappender']))?>">LogFileAppender</a></td>
 														<td>Logging appender that outputs messages to a file</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-parameterhelper'])?>">ParameterHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-parameterhelper']))?>">ParameterHelper</a></td>
 														<td>Utility that provides operations common to handling input parameters, such as from GET or POST requests</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-sanitationhelper'])?>">SanitationHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-sanitationhelper']))?>">SanitationHelper</a></td>
 														<td>Utility that provides basic sanitation helpers and a framework for creating specialized ones</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-stringhelper'])?>">StringHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-stringhelper']))?>">StringHelper</a></td>
 														<td>Utility that wraps useful string operations around PHP strings</td>
 													</tr>
 												</tbody>
@@ -85,8 +85,8 @@
 
 									<div class="section-block">
 										<p>
-											Continue to read about the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'io-consolehelper'])?>">ConsoleHelper</a>
-											within the <em>I/O</em> component, or visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read about the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'io-consolehelper']))?>">ConsoleHelper</a>
+											within the <em>I/O</em> component, or visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>

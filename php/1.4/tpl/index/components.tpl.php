@@ -25,7 +25,7 @@
 											the other components in the framework.
 										</p>
 
-										<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'component-core'])?>" class="btn btn-blue"><i class="fas fa-book-open"></i> Documentation</a>
+										<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'component-core']))?>" class="btn btn-blue"><i class="fas fa-book-open"></i> Documentation</a>
 										<a href="https://github.com/zibings/stoic-php-core" class="btn btn-green" target="_blank"><i class="fab fa-github"></i> Github Pages</a>
 									</div>
 								</section>
@@ -38,7 +38,7 @@
 											Components that focus on simplifying common input/output operations.
 										</p>
 
-										<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'component-io'])?>" class="btn btn-blue"><i class="fas fa-book-open"></i> Documentation</a>
+										<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'component-io']))?>" class="btn btn-blue"><i class="fas fa-book-open"></i> Documentation</a>
 										<a href="https://github.com/zibings/stoic-php-io" class="btn btn-green" target="_blank"><i class="fab fa-github"></i> Github Pages</a>
 									</div>
 								</section>
@@ -51,7 +51,7 @@
 											Components that provide wrappers for common PDO operations in PHP.
 										</p>
 
-										<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'component-pdo'])?>" class="btn btn-blue"><i class="fas fa-book-open"></i> Documentation</a>
+										<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'component-pdo']))?>" class="btn btn-blue"><i class="fas fa-book-open"></i> Documentation</a>
 										<a href="https://github.com/zibings/stoic-php-pdo" class="btn btn-green" target="_blank"><i class="fab fa-github"></i> Github Pages</a>
 									</div>
 								</section>
@@ -64,7 +64,7 @@
 											Components that provide simple web functionality without dictating program structure/flow.
 										</p>
 
-										<a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'component-web'])?>" class="btn btn-blue"><i class="fas fa-book-open"></i> Documentation</a>
+										<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'component-web']))?>" class="btn btn-blue"><i class="fas fa-book-open"></i> Documentation</a>
 										<a href="https://github.com/zibings/stoic-php-web" class="btn btn-green" target="_blank"><i class="fab fa-github"></i> Github Pages</a>
 									</div>
 								</section>

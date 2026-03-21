@@ -95,10 +95,10 @@ $log->output();
 
 									<div class="section-block">
 										<ul>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-logger'])?>">Logger</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-appenders'])?>">Appenders</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-messages'])?>">Messages</a></li>
-											<li><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-examples'])?>">Examples</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-logger']))?>">Logger</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-appenders']))?>">Appenders</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-messages']))?>">Messages</a></li>
+											<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-examples']))?>">Examples</a></li>
 										</ul>
 									</div>
 								</section>
@@ -108,8 +108,8 @@ $log->output();
 
 									<div class="section-block">
 										<p>
-											Continue to read about <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-logger'])?>">Logger</a>,
-											or visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read about <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-logging-logger']))?>">Logger</a>,
+											or visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>

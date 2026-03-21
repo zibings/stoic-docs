@@ -43,15 +43,15 @@
 												</thead>
 												<tbody>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'pdo-basedbclass'])?>">BaseDbClass</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'pdo-basedbclass']))?>">BaseDbClass</a></td>
 														<td>Abstract base class providing PDO and Logger injection with utility methods for exception handling</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'pdo-basedbmodel'])?>">BaseDbModel</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'pdo-basedbmodel']))?>">BaseDbModel</a></td>
 														<td>Simplistic ORM scaffolding for CRUD operations with automatic query generation</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'pdo-pdohelper'])?>">PdoHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'pdo-pdohelper']))?>">PdoHelper</a></td>
 														<td>Wrapper for PHP's PDO class that adds query logging, error tracking, and stored queries</td>
 													</tr>
 												</tbody>
@@ -65,8 +65,8 @@
 
 									<div class="section-block">
 										<p>
-											Continue to read about <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'pdo-basedbclass'])?>">BaseDbClass</a>
-											within the <em>PDO</em> component, or visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read about <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'pdo-basedbclass']))?>">BaseDbClass</a>
+											within the <em>PDO</em> component, or visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>

@@ -44,19 +44,19 @@
 												</thead>
 												<tbody>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains'])?>">Chains</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains']))?>">Chains</a></td>
 														<td>Execution system for pub/sub, event, or chain of responsibility patterns</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-logging'])?>">Logging</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-logging']))?>">Logging</a></td>
 														<td>PSR-3 compliant logging system better suited for configured output options</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-returnhelper'])?>">ReturnHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-returnhelper']))?>">ReturnHelper</a></td>
 														<td>Utility that provides more detailed success/fail return values</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-enumbase'])?>">EnumBase</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-enumbase']))?>">EnumBase</a></td>
 														<td>Utility that provides some general functionality for creating enumerated class values</td>
 													</tr>
 												</tbody>
@@ -70,8 +70,8 @@
 
 									<div class="section-block">
 										<p>
-											Continue to read about <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'core-chains'])?>">chains</a>
-											within the <em>Core</em> component, or visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read about <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'core-chains']))?>">chains</a>
+											within the <em>Core</em> component, or visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>

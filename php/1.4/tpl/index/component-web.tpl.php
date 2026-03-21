@@ -43,31 +43,31 @@
 												</thead>
 												<tbody>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-stoic'])?>">Stoic</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-stoic']))?>">Stoic</a></td>
 														<td>The primary class that orchestrates page-level operations and manages core services</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-request'])?>">Request</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-request']))?>">Request</a></td>
 														<td>Represents a single HTTP request with typed access to superglobals</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-fileuploadhelper'])?>">FileUploadHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-fileuploadhelper']))?>">FileUploadHelper</a></td>
 														<td>Normalizes uploaded file information from the <code>$_FILES</code> superglobal</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-htmlelementhelper'])?>">HtmlElementHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-htmlelementhelper']))?>">HtmlElementHelper</a></td>
 														<td>Aids in programmatic generation of HTML elements</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-pagehelper'])?>">PageHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-pagehelper']))?>">PageHelper</a></td>
 														<td>Holds page information such as title, meta tags, and asset path generation</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-paginatehelper'])?>">PaginateHelper</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-paginatehelper']))?>">PaginateHelper</a></td>
 														<td>Performs common pagination math for page offsets and totals</td>
 													</tr>
 													<tr>
-														<td><a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-api'])?>">API Helpers</a></td>
+														<td><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-api']))?>">API Helpers</a></td>
 														<td>Tools for building RESTful APIs including routing, responses, and authorization</td>
 													</tr>
 												</tbody>
@@ -81,8 +81,8 @@
 
 									<div class="section-block">
 										<p>
-											Continue to read about <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-stoic'])?>">Stoic</a>
-											within the <em>Web</em> component, or visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read about <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-stoic']))?>">Stoic</a>
+											within the <em>Web</em> component, or visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>

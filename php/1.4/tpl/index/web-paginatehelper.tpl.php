@@ -125,8 +125,8 @@ $stmt->execute();
 
 									<div class="section-block">
 										<p>
-											Continue to read about the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'web-api'])?>">API Helpers</a>
-											within the <em>Web</em> component, or visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read about the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'web-api']))?>">API Helpers</a>
+											within the <em>Web</em> component, or visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>
