@@ -16,18 +16,19 @@
 					<div class="doc-body row">
 						<div class="doc-content col-md-9 col-12 order-1">
 							<div class="content-inner">
-                <section id="credits" class="doc-section">
-                  <h2 class="section-title">Credits</h2>
+                                <section id="credits" class="doc-section">
+                                  <h2 class="section-title">Credits</h2>
 
-                  <div class="section-block">
-                    <ul>
-                      <li><a href="https://github.com/c-butcher" target="_blank">c-butcher</a></li>
-                      <li><a href="https://github.com/ctd1500" target="_blank">ctd1500</a></li>
-                      <li><a href="https://github.com/mhykes" target="_blank">mhykes</a></li>
-                      <li><a href="https://github.com/AndyM84" target="_blank">AndyM84</a></li>
-                    </ul>
-                  </div>
-                </section>
+                                  <div class="section-block">
+                                    <ul>
+                                      <li><a href="https://github.com/c-butcher" target="_blank">c-butcher</a></li>
+                                      <li><a href="https://github.com/ctd1500" target="_blank">ctd1500</a></li>
+                                      <li><a href="https://github.com/mhykes" target="_blank">mhykes</a></li>
+                                      <li><a href="https://github.com/superg3m" target="_blank">superg3m</a></li>
+                                      <li><a href="https://github.com/AndyM84" target="_blank">AndyM84</a></li>
+                                    </ul>
+                                  </div>
+                                </section>
 
 								<section id="license" class="doc-section">
 									<div class="section-block">
@@ -242,8 +243,8 @@
 
 									<div class="section-block">
 										<p>
-											Continue to read about the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'concepts'])?>">concepts</a>
-											within Stoic:PHP, or visit the <a href="<?=$page->getAssetPath('~/php/1.4/', ['page' => 'toc'])?>">Table of Contents</a>.
+											Continue to read about the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'concepts']))?>">concepts</a>
+											within Stoic:PHP, or visit the <a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>">Table of Contents</a>.
 										</p>
 									</div>
 								</section>
