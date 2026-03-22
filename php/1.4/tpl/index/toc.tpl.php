@@ -103,6 +103,13 @@
 													</li>
 												</ul>
 											</li>
+											<li>
+												<a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'tutorials']))?>">Tutorials</a>
+
+												<ul>
+													<li><a href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'tutorial-fizzbuzz-api']))?>">Building a FizzBuzz API</a></li>
+												</ul>
+											</li>
 										</ul>
 									</div>
 								</section><!--//doc-section-->

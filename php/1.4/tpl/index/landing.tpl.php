@@ -17,7 +17,7 @@
 					</div><!--//intro-->
 					
 					<div id="cards-wrapper" class="cards-wrapper row cta-container">
-						<div class="item item-green col-lg-4 col-6">
+						<div class="item item-green col-lg-3 col-6">
 							<div class="item-inner">
 								<div class="icon-holder">
 									<i class="icon fa fa-paper-plane"></i>
@@ -30,7 +30,7 @@
 							</div><!--//item-inner-->
 						</div><!--//item-->
 						
-						<div class="item item-pink item-2 col-lg-4 col-6">
+						<div class="item item-pink item-2 col-lg-3 col-6">
 							<div class="item-inner">
 								<div class="icon-holder">
 									<span aria-hidden="true" class="icon icon_puzzle_alt"></span>
@@ -43,14 +43,27 @@
 							</div><!--//item-inner-->
 						</div><!--//item-->
 						
-						<div class="item item-purple col-lg-4 col-6">
+						<div class="item item-blue col-lg-3 col-6">
+							<div class="item-inner">
+								<div class="icon-holder">
+									<span aria-hidden="true" class="icon icon_book_alt"></span>
+								</div><!--//icon-holder-->
+
+								<h3 class="title">Tutorials</h3>
+
+								<p class="intro">Step-by-step guides for common tasks with Stoic:PHP.</p>
+								<a class="link" href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'tutorials']))?>"><span></span></a>
+							</div><!--//item-inner-->
+						</div><!--//item-->
+
+						<div class="item item-purple col-lg-3 col-6">
 							<div class="item-inner">
 								<div class="icon-holder">
 									<span aria-hidden="true" class="icon icon_lifesaver"></span>
 								</div><!--//icon-holder-->
-							
+
 								<h3 class="title">All Contents</h3>
-							
+
 								<p class="intro">Full reference documentation for all components and their contents.</p>
 								<a class="link" href="<?=$this->localUrl($page->getAssetPath('~/php/1.4/', ['page' => 'toc']))?>"><span></span></a>
 							</div><!--//item-inner-->
