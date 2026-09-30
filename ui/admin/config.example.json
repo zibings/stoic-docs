@@ -1,0 +1,8 @@
+// working example, copy to /public/config.json to use
+{
+	"environment": "development",
+	"api": {
+		"baseUrl": "http://localhost:8080/api/"
+	},
+	"siteUrl": "http://localhost:8080"
+}

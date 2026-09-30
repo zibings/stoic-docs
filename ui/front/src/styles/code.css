@@ -1,0 +1,84 @@
+/* highlight.js token classes mapped onto the design tokens. Blue = keywords/structure, orange = literals, as in the
+   mockups. The dark contract pane overrides the same classes with its own palette. */
+
+.hljs {
+	color: var(--color-ink);
+	background: transparent;
+}
+
+.hljs-keyword,
+.hljs-built_in,
+.hljs-type,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-name,
+.hljs-meta {
+	color: var(--color-accent);
+}
+
+.hljs-string,
+.hljs-number,
+.hljs-literal,
+.hljs-regexp,
+.hljs-attr,
+.hljs-symbol,
+.hljs-template-variable,
+.hljs-variable.language_ {
+	color: var(--color-warn-text);
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-doctag {
+	color: var(--color-muted);
+	font-style: italic;
+}
+
+.hljs-title,
+.hljs-title.function_,
+.hljs-title.class_ {
+	color: var(--color-ink);
+	font-weight: 500;
+}
+
+.hljs-attribute,
+.hljs-property,
+.hljs-params {
+	color: var(--color-ink2);
+}
+
+/* Inside the dark pane */
+.pane .hljs {
+	color: var(--pane-text);
+}
+
+.pane .hljs-keyword,
+.pane .hljs-built_in,
+.pane .hljs-type,
+.pane .hljs-meta,
+.pane .hljs-name,
+.pane .hljs-section {
+	color: var(--pane-link);
+}
+
+.pane .hljs-string,
+.pane .hljs-number,
+.pane .hljs-literal,
+.pane .hljs-attr,
+.pane .hljs-symbol {
+	color: var(--pane-warn);
+}
+
+.pane .hljs-comment,
+.pane .hljs-quote {
+	color: var(--pane-muted);
+}
+
+.pane .hljs-title,
+.pane .hljs-title.function_,
+.pane .hljs-title.class_,
+.pane .hljs-attribute,
+.pane .hljs-property,
+.pane .hljs-params {
+	color: var(--pane-text);
+}

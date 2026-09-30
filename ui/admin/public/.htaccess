@@ -1,0 +1,18 @@
+RewriteEngine On
+# The site root turns DirectorySlash off for pre-rendered pages; this app has a real index, so /admin should redirect to /admin/
+DirectorySlash On
+RewriteBase /admin/
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /admin/index.html [L]
+
+<IfModule mod_headers.c>
+<filesMatch "\.(html)$">
+FileETag None
+Header unset ETag
+Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+Header set Pragma "no-cache"
+Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</filesMatch>
+</IfModule>

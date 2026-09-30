@@ -1,0 +1,80 @@
+openapi: 3.0.0
+info:
+  title: Widgets API
+  version: 1.0.0
+tags:
+  - name: Widgets
+    description: Create and inspect widgets
+paths:
+  /Widgets:
+    get:
+      tags: [Widgets]
+      summary: Lists widgets
+      operationId: listWidgets
+      parameters:
+        - name: limit
+          in: query
+          description: Page size
+          schema: { type: integer, default: 20 }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { type: array, items: { $ref: '#/components/schemas/Widget' } }
+    post:
+      tags: [Widgets]
+      summary: Creates a widget
+      operationId: createWidget
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name: { type: string, description: Display name }
+                color: { type: string, enum: [red, blue], default: red }
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Widget' }
+        '400':
+          description: Invalid payload
+  /Widgets/{id}:
+    get:
+      tags: [Widgets]
+      summary: Reads one widget
+      operationId: getWidget
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Widget' }
+        '404':
+          description: Unknown widget
+  /Legacy/Ping:
+    get:
+      summary: Old health check
+      responses:
+        '200':
+          description: pong
+components:
+  schemas:
+    Widget:
+      type: object
+      description: A widget record
+      required: [id, name]
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        color: { type: string, nullable: true }

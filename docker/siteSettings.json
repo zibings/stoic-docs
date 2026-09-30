@@ -1,0 +1,100 @@
+{
+	"schema": {
+		"configVersion": "int",
+		"api.cacheControl": "str",
+		"api.contentType": "str",
+		"assetsPath": "str",
+		"classesExt": "str",
+		"classesPath": "str",
+		"cors.headers": "str",
+		"cors.methods": "str",
+		"cors.origins": "str[]",
+		"includePath": "str",
+		"migrateCfg": "str",
+		"migrateDb": "str",
+		"reposExt": "str",
+		"reposPath": "str",
+		"utilitiesExt": "str",
+		"utilitiesPath": "str",
+		"systemVersion": "str",
+		"siteName": "str",
+		"facebookKey": "str",
+		"facebookSecret": "str",
+		"githubKey": "str",
+		"githubSecret": "str",
+		"redditKey": "str",
+		"redditSecret": "str",
+		"twitchKey": "str",
+		"twitchSecret": "str",
+		"twitterKey": "str",
+		"twitterSecret": "str",
+		"enableSmtp": "bln",
+		"smtpHost": "str",
+		"smtpPort": "int",
+		"smtpUser": "str",
+		"smtpPass": "str",
+		"defaultFromAddress": "str",
+		"defaultFromName": "str",
+		"apiPath": "str",
+		"curlSecure": "bln",
+		"dbDsns.default": "str",
+		"dbPasses.default": "str",
+		"dbUsers.default": "str"
+	},
+	"settings": {
+		"configVersion": 5,
+		"api": {
+			"cacheControl": "max-age=500",
+			"contentType": "application\/json"
+		},
+		"assetsPath": "~\/assets",
+		"classesExt": ".cls.php",
+		"classesPath": "classes",
+		"cors": {
+			"headers": "Accept, Authorization, Content-Type, X-CSRF-Token, App-Token, Token",
+			"methods": "GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH",
+			"origins": [
+				"http:\/\/localhost",
+				"http:\/\/localhost:5173",
+				"http:\/\/localhost:5174"
+			]
+		},
+		"includePath": "~\/inc",
+		"migrateCfg": "migrations\/cfg",
+		"migrateDb": "migrations\/db",
+		"reposExt": ".rpo.php",
+		"reposPath": "repositories",
+		"utilitiesExt": ".utl.php",
+		"utilitiesPath": "utilities",
+		"systemVersion": "0.1.0.0",
+		"siteName": "Your Site",
+		"facebookKey": "<changeme>",
+		"facebookSecret": "<changeme>",
+		"githubKey": "<changeme>",
+		"githubSecret": "<changeme>",
+		"redditKey": "<changeme>",
+		"redditSecret": "<changeme>",
+		"twitchKey": "<changeme>",
+		"twitchSecret": "<changeme>",
+		"twitterKey": "<changeme>",
+		"twitterSecret": "<changeme>",
+		"enableSmtp": true,
+		"smtpHost": "smtp",
+		"smtpPort": 1025,
+		"smtpUser": "",
+		"smtpPass": "",
+		"defaultFromAddress": "noreply@domain.com",
+		"defaultFromName": "Your Site",
+		"apiPath": "http:\/\/localhost\/api",
+		"curlSecure": false,
+		"dbDsns": {
+			"default": "mysql:host=db:3306;dbname=zsf"
+		},
+		"dbPasses": {
+			"default": "P@55word"
+		},
+		"dbUsers": {
+			"default": "root"
+		}
+	}
+}

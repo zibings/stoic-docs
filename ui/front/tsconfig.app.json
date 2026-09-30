@@ -1,0 +1,70 @@
+{
+	"extends": "@vue/tsconfig/tsconfig.dom.json",
+	"include": [
+		"env.d.ts",
+		"src/**/*",
+		"src/**/*.vue",
+		"../shared/**/*.ts"
+	],
+	"exclude": [
+		"src/**/__tests__/*"
+	],
+	"compilerOptions": {
+		"composite": true,
+		"noEmit": true,
+		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+		"baseUrl": ".",
+		"resolveJsonModule": true,
+		"paths": {
+			"@/*": [
+				"src/*"
+			],
+			"api/*": [
+				"src/api/*"
+			],
+			"browse/*": [
+				"src/browse/*"
+			],
+			"components/*": [
+				"src/components/*"
+			],
+			"composables/*": [
+				"src/composables/*"
+			],
+			"contract/*": [
+				"src/contract/*"
+			],
+			"design/*": [
+				"../shared/design/*"
+			],
+			"layout/*": [
+				"src/layout/*"
+			],
+			"learn/*": [
+				"src/learn/*"
+			],
+			"markdown/*": [
+				"../shared/markdown/*"
+			],
+			"search/*": [
+				"src/search/*"
+			],
+			"stores/*": [
+				"src/stores/*"
+			],
+			"styles/*": [
+				"src/styles/*"
+			],
+			"types/*": [
+				"../shared/types/*",
+				"src/types/*"
+			],
+			"upgrade/*": [
+				"src/upgrade/*"
+			],
+			"views/*": [
+				"src/views/*"
+			]
+		}
+	}
+}

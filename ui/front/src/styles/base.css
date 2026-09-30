@@ -1,0 +1,214 @@
+/* Global baseline. Every value comes from design/tokens.css; components add their own classes on top. */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	min-height: 100dvh;
+	background: var(--color-ground);
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+	font-size: var(--text-body);
+	line-height: var(--leading-body);
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+pre {
+	margin: 0;
+}
+
+a {
+	color: var(--color-accent);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--color-accent-strong);
+	text-decoration: underline;
+}
+
+button,
+input,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+	background: none;
+	border: 0;
+	padding: 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: var(--font-mono);
+}
+
+pre {
+	font-size: var(--text-code);
+	line-height: var(--leading-code);
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* --- shared primitives ------------------------------------------------------------------------------------ */
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.skip-link {
+	position: absolute;
+	left: 16px;
+	top: -100px;
+	z-index: 100;
+	padding: 8px 12px;
+	background: var(--color-ink);
+	color: var(--color-surface);
+	border-radius: var(--radius-control);
+}
+
+.skip-link:focus {
+	top: 8px;
+}
+
+/* 12px uppercase label used for section headings, "Your context", etc. */
+.label {
+	font-size: var(--text-label);
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+}
+
+/* Keyboard hint badge (⌘K) */
+.kbd {
+	font-family: var(--font-mono);
+	font-size: var(--text-label);
+	padding: 2px 6px;
+	border: 1px solid var(--color-control-border);
+	border-radius: var(--radius-chip);
+	color: var(--color-muted);
+}
+
+/* Small mono pill: since / changed / stable */
+.pill {
+	display: inline-block;
+	font-family: var(--font-mono);
+	font-size: var(--text-label);
+	padding: 3px 8px;
+	border-radius: var(--radius-chip);
+	background: var(--color-chip);
+	color: var(--color-ink3);
+}
+
+.pill--accent {
+	background: var(--color-accent-tint);
+	color: var(--color-accent-strong);
+}
+
+.pill--warn {
+	background: var(--color-warn-tint);
+	color: var(--color-warn-text);
+}
+
+/* Control-styled button (white surface, thin border) */
+.control {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 34px;
+	padding: 0 10px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-control-border);
+	border-radius: var(--radius-control);
+	color: var(--color-ink);
+	font-family: var(--font-mono);
+	font-size: var(--text-meta);
+	text-align: left;
+}
+
+.control:hover {
+	border-color: var(--color-faint);
+}
+
+/* Full-row card. Cards are always full content width. */
+.card {
+	border: 1px solid var(--color-rule);
+	border-radius: var(--radius-card);
+	background: var(--color-surface);
+	padding: var(--card-pad);
+}
+
+.card--accent {
+	border-color: var(--color-accent-card-border);
+	background: var(--color-accent-card-bg);
+}
+
+.card--warn {
+	border-color: var(--color-warn-card-bg);
+	border-color: var(--color-warn-card-border);
+	background: var(--color-warn-card-bg);
+}
+
+/* Struck-through, faint: symbol removed in the selected version */
+.removed {
+	color: var(--color-faint);
+	text-decoration: line-through;
+}
+
+/* Icon-only touch target */
+.icon-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--touch-target);
+	height: var(--touch-target);
+	border-radius: var(--radius-control);
+	color: var(--color-ink);
+}
+
+.icon-button:hover {
+	background: var(--color-chip);
+}

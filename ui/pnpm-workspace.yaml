@@ -1,0 +1,9 @@
+packages:
+  - front
+  - admin
+  - shared
+
+allowBuilds:
+  esbuild: true
+  vue-demi: true
+  "@parcel/watcher": false

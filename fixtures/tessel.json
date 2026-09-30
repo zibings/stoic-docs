@@ -1,0 +1,1641 @@
+{
+	"contextOptions": [
+		{
+			"kind": "language",
+			"key": "ts",
+			"label": "TypeScript",
+			"sortOrder": 1,
+			"default": true
+		},
+		{
+			"kind": "language",
+			"key": "js",
+			"label": "JavaScript",
+			"sortOrder": 2,
+			"default": false
+		},
+		{
+			"kind": "packageManager",
+			"key": "pnpm",
+			"label": "pnpm",
+			"sortOrder": 1,
+			"default": true
+		},
+		{
+			"kind": "packageManager",
+			"key": "npm",
+			"label": "npm",
+			"sortOrder": 2,
+			"default": false
+		},
+		{
+			"kind": "packageManager",
+			"key": "yarn",
+			"label": "yarn",
+			"sortOrder": 3,
+			"default": false
+		}
+	],
+	"versions": [
+		{
+			"tag": "2.0.0",
+			"label": "v2.0",
+			"sortKey": 200,
+			"releasedAt": "2023-03-14",
+			"latest": false,
+			"supported": false
+		},
+		{
+			"tag": "3.0.0",
+			"label": "v3.0",
+			"sortKey": 300,
+			"releasedAt": "2023-11-02",
+			"latest": false,
+			"supported": false
+		},
+		{
+			"tag": "3.8.0",
+			"label": "v3.8",
+			"sortKey": 380,
+			"releasedAt": "2024-06-18",
+			"latest": false,
+			"supported": true
+		},
+		{
+			"tag": "4.0.0",
+			"label": "v4.0",
+			"sortKey": 400,
+			"releasedAt": "2025-01-21",
+			"latest": false,
+			"supported": true
+		},
+		{
+			"tag": "4.1.0",
+			"label": "v4.1",
+			"sortKey": 410,
+			"releasedAt": "2025-05-06",
+			"latest": false,
+			"supported": true
+		},
+		{
+			"tag": "4.2.0",
+			"label": "v4.2",
+			"sortKey": 420,
+			"releasedAt": "2025-09-09",
+			"latest": true,
+			"supported": true
+		}
+	],
+	"modules": [
+		{
+			"path": "tessel/query",
+			"summary": "Declare, read, and invalidate server data.",
+			"sortOrder": 1,
+			"symbols": [
+				{
+					"name": "createQuery",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": "v4.0",
+							"signature": "function createQuery<T>(\n  key: QueryKey,\n  fetcher: (ctx: QueryContext) => Promise<T>,\n  options?: QueryOptions<T>\n): Query<T>",
+							"summary": "Declare a piece of server data once; read it anywhere, and let the cache decide when to refetch.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "key",
+									"type": "QueryKey",
+									"required": true,
+									"default": null,
+									"description": "Serializable key identifying the query."
+								},
+								{
+									"name": "fetcher",
+									"type": "(ctx: QueryContext) => Promise<T>",
+									"required": true,
+									"default": null,
+									"description": "Loads the data; receives the query context."
+								},
+								{
+									"name": "options",
+									"type": "QueryOptions<T>",
+									"required": false,
+									"default": null,
+									"description": "Behavior overrides; see QueryOptions."
+								}
+							],
+							"returns": {
+								"type": "Query<T>",
+								"description": "lazy; nothing fetches until read"
+							},
+							"throws": [
+								{
+									"type": "QueryKeyError",
+									"description": "key isn't serializable"
+								}
+							],
+							"sourcePath": "src/query/create.ts",
+							"sourceLine": 38
+						},
+						{
+							"introduced": "v4.0",
+							"removed": null,
+							"signature": "function createQuery<T>(\n  key: QueryKey,\n  fetcher: (ctx: QueryContext) => Promise<T>,\n  options?: QueryOptions<T>\n): Query<T>",
+							"summary": "Declare a piece of server data once; read it anywhere, and let the cache decide when to refetch.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "key",
+									"type": "QueryKey",
+									"required": true,
+									"default": null,
+									"description": "Serializable key identifying the query."
+								},
+								{
+									"name": "fetcher",
+									"type": "(ctx: QueryContext) => Promise<T>",
+									"required": true,
+									"default": null,
+									"description": "Loads the data; receives the query context."
+								},
+								{
+									"name": "options",
+									"type": "QueryOptions<T>",
+									"required": false,
+									"default": null,
+									"description": "Behavior overrides; see QueryOptions."
+								}
+							],
+							"returns": {
+								"type": "Query<T>",
+								"description": "lazy; nothing fetches until read"
+							},
+							"throws": [
+								{
+									"type": "QueryKeyError",
+									"description": "key isn't serializable"
+								}
+							],
+							"sourcePath": "src/query/create.ts",
+							"sourceLine": 42
+						}
+					]
+				},
+				{
+					"name": "createMutation",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "function createMutation<TInput, TResult>(\n  mutate: (input: TInput) => Promise<TResult>,\n  options?: MutationOptions<TResult>\n): Mutation<TInput, TResult>",
+							"summary": "Declare a write to the server and track its lifecycle.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "mutate",
+									"type": "(input: TInput) => Promise<TResult>",
+									"required": true,
+									"default": null,
+									"description": "Performs the write."
+								},
+								{
+									"name": "options",
+									"type": "MutationOptions<TResult>",
+									"required": false,
+									"default": null,
+									"description": "Callbacks for success, error, and settled."
+								}
+							],
+							"returns": {
+								"type": "Mutation<TInput, TResult>",
+								"description": "call .run(input) to start it"
+							},
+							"throws": [],
+							"sourcePath": "src/query/mutation.ts",
+							"sourceLine": 17
+						}
+					]
+				},
+				{
+					"name": "invalidate",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": "v4.2",
+							"signature": "function invalidate(key: string): Promise<void>",
+							"summary": "Mark every query under a key prefix stale so the next read refetches.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "key",
+									"type": "string",
+									"required": true,
+									"default": null,
+									"description": "Key prefix to invalidate."
+								}
+							],
+							"returns": {
+								"type": "Promise<void>",
+								"description": "resolves once refetches are scheduled"
+							},
+							"throws": [],
+							"sourcePath": "src/query/invalidate.ts",
+							"sourceLine": 9
+						},
+						{
+							"introduced": "v4.2",
+							"removed": null,
+							"signature": "function invalidate(key: QueryKey): Promise<void>",
+							"summary": "Mark every query under a key prefix stale so the next read refetches.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "key",
+									"type": "QueryKey",
+									"required": true,
+									"default": null,
+									"description": "Key prefix to invalidate; string keys are deprecated."
+								}
+							],
+							"returns": {
+								"type": "Promise<void>",
+								"description": "resolves once refetches are scheduled"
+							},
+							"throws": [],
+							"sourcePath": "src/query/invalidate.ts",
+							"sourceLine": 11
+						}
+					]
+				},
+				{
+					"name": "prefetch",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v3.0",
+							"removed": null,
+							"signature": "function prefetch<T>(\n  query: Query<T>,\n  opts?: { ifStale?: boolean }\n): Promise<void>",
+							"summary": "Warm the cache for a query you're about to need, without subscribing to it.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "query",
+									"type": "Query<T>",
+									"required": true,
+									"default": null,
+									"description": "The query to warm."
+								},
+								{
+									"name": "opts.ifStale",
+									"type": "boolean",
+									"required": false,
+									"default": "true",
+									"description": "Skip the fetch when the cached value is still fresh."
+								}
+							],
+							"returns": {
+								"type": "Promise<void>",
+								"description": "resolves when the cache holds a value"
+							},
+							"throws": [],
+							"sourcePath": "src/query/prefetch.ts",
+							"sourceLine": 14
+						}
+					]
+				},
+				{
+					"name": "QueryKey",
+					"kind": "type",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": "v4.0",
+							"signature": "type QueryKey = unknown[]",
+							"summary": "The identity of a query.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						},
+						{
+							"introduced": "v4.0",
+							"removed": null,
+							"signature": "type QueryKey = readonly Serializable[]",
+							"summary": "The identity of a query. Every element must be JSON-serializable.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": [
+								{
+									"type": "QueryKeyError",
+									"description": "thrown by createQuery when an element isn't serializable"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "QueryOptions",
+					"kind": "type",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": "v4.0",
+							"signature": "interface QueryOptions<T> {\n  enabled?: boolean\n  staleTime?: number\n  retry?: number | false\n  signal?: AbortSignal\n  gcTime?: number\n  onSettled?: (result) => void\n}",
+							"summary": "Behavior overrides for a query.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "enabled",
+									"type": "boolean",
+									"required": false,
+									"default": "true",
+									"description": "Whether the query may run at all."
+								},
+								{
+									"name": "staleTime",
+									"type": "number",
+									"required": false,
+									"default": "0",
+									"description": "Milliseconds a result stays fresh."
+								},
+								{
+									"name": "retry",
+									"type": "number | false",
+									"required": false,
+									"default": "3",
+									"description": "How many times a failed fetch is retried."
+								},
+								{
+									"name": "signal",
+									"type": "AbortSignal",
+									"required": false,
+									"default": null,
+									"description": "Abort signal forwarded to the fetcher."
+								},
+								{
+									"name": "gcTime",
+									"type": "number",
+									"required": false,
+									"default": "300_000",
+									"description": "Milliseconds an unused result stays in the cache."
+								},
+								{
+									"name": "onSettled",
+									"type": "(result) => void",
+									"required": false,
+									"default": null,
+									"description": "Called after a fetch succeeds or fails."
+								}
+							],
+							"returns": {},
+							"throws": []
+						},
+						{
+							"introduced": "v4.0",
+							"removed": "v4.2",
+							"signature": "interface QueryOptions<T> {\n  enabled?: boolean\n  staleTime?: number\n  retry?: number | false\n  signal?: AbortSignal\n  gcTime?: number\n  onSettled?: (result) => void\n}",
+							"summary": "Behavior overrides for a query.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "enabled",
+									"type": "boolean",
+									"required": false,
+									"default": "true",
+									"description": "Whether the query may run at all."
+								},
+								{
+									"name": "staleTime",
+									"type": "number",
+									"required": false,
+									"default": "30_000",
+									"description": "Milliseconds a result stays fresh."
+								},
+								{
+									"name": "retry",
+									"type": "number | false",
+									"required": false,
+									"default": "3",
+									"description": "How many times a failed fetch is retried."
+								},
+								{
+									"name": "signal",
+									"type": "AbortSignal",
+									"required": false,
+									"default": null,
+									"description": "Abort signal forwarded to the fetcher."
+								},
+								{
+									"name": "gcTime",
+									"type": "number",
+									"required": false,
+									"default": "300_000",
+									"description": "Milliseconds an unused result stays in the cache."
+								},
+								{
+									"name": "onSettled",
+									"type": "(result) => void",
+									"required": false,
+									"default": null,
+									"description": "Called after a fetch succeeds or fails."
+								}
+							],
+							"returns": {},
+							"throws": []
+						},
+						{
+							"introduced": "v4.2",
+							"removed": null,
+							"signature": "interface QueryOptions<T> {\n  enabled?: boolean\n  staleTime?: number\n  retry?: number | false\n  signal?: AbortSignal\n  gcTime?: number\n  /** @deprecated */ onSettled?: (result) => void\n}",
+							"summary": "Behavior overrides for a query.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "enabled",
+									"type": "boolean",
+									"required": false,
+									"default": "true",
+									"description": "Whether the query may run at all."
+								},
+								{
+									"name": "staleTime",
+									"type": "number",
+									"required": false,
+									"default": "30_000",
+									"description": "Milliseconds a result stays fresh."
+								},
+								{
+									"name": "retry",
+									"type": "number | false",
+									"required": false,
+									"default": "3",
+									"description": "How many times a failed fetch is retried."
+								},
+								{
+									"name": "signal",
+									"type": "AbortSignal",
+									"required": false,
+									"default": null,
+									"description": "Abort signal forwarded to the fetcher."
+								},
+								{
+									"name": "gcTime",
+									"type": "number",
+									"required": false,
+									"default": "300_000",
+									"description": "Milliseconds an unused result stays in the cache."
+								},
+								{
+									"name": "onSettled",
+									"type": "(result) => void",
+									"required": false,
+									"default": null,
+									"description": "Deprecated: subscribe to the query instead."
+								}
+							],
+							"returns": {},
+							"throws": []
+						}
+					],
+					"children": [
+						{
+							"name": "enabled",
+							"kind": "option",
+							"versions": [
+								{
+									"introduced": "v2.0",
+									"removed": null,
+									"signature": "enabled?: boolean",
+									"summary": "Whether the query may run at all.",
+									"status": "stable",
+									"params": [],
+									"returns": {},
+									"throws": []
+								}
+							]
+						},
+						{
+							"name": "staleTime",
+							"kind": "option",
+							"versions": [
+								{
+									"introduced": "v2.0",
+									"removed": "v4.0",
+									"signature": "staleTime?: number = 0",
+									"summary": "Milliseconds a result stays fresh.",
+									"status": "stable",
+									"params": [],
+									"returns": {},
+									"throws": []
+								},
+								{
+									"introduced": "v4.0",
+									"removed": null,
+									"signature": "staleTime?: number = 30_000",
+									"summary": "Milliseconds a result stays fresh. Was 0 before v4.0.",
+									"status": "stable",
+									"params": [],
+									"returns": {},
+									"throws": []
+								}
+							]
+						},
+						{
+							"name": "retry",
+							"kind": "option",
+							"versions": [
+								{
+									"introduced": "v2.0",
+									"removed": null,
+									"signature": "retry?: number | false",
+									"summary": "How many times a failed fetch is retried.",
+									"status": "stable",
+									"params": [],
+									"returns": {},
+									"throws": []
+								}
+							]
+						},
+						{
+							"name": "signal",
+							"kind": "option",
+							"versions": [
+								{
+									"introduced": "v2.0",
+									"removed": null,
+									"signature": "signal?: AbortSignal",
+									"summary": "Abort signal forwarded to the fetcher.",
+									"status": "stable",
+									"params": [],
+									"returns": {},
+									"throws": []
+								}
+							]
+						},
+						{
+							"name": "gcTime",
+							"kind": "option",
+							"versions": [
+								{
+									"introduced": "v2.0",
+									"removed": null,
+									"signature": "gcTime?: number",
+									"summary": "Milliseconds an unused result stays in the cache.",
+									"status": "stable",
+									"params": [],
+									"returns": {},
+									"throws": []
+								}
+							]
+						},
+						{
+							"name": "onSettled",
+							"kind": "option",
+							"versions": [
+								{
+									"introduced": "v2.0",
+									"removed": "v4.2",
+									"signature": "onSettled?: (result) => void",
+									"summary": "Called after a fetch succeeds or fails.",
+									"status": "stable",
+									"params": [],
+									"returns": {},
+									"throws": []
+								},
+								{
+									"introduced": "v4.2",
+									"removed": null,
+									"signature": "onSettled?: (result) => void",
+									"summary": "Deprecated: subscribe to the query instead.",
+									"status": "deprecated",
+									"params": [],
+									"returns": {},
+									"throws": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "useLegacyCache",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": "v4.0",
+							"signature": "function useLegacyCache(): void",
+							"summary": "Opt a query tree into the v1 cache semantics.",
+							"status": "deprecated",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "tessel/cache",
+			"summary": "Inspect and manipulate the cache directly.",
+			"sortOrder": 2,
+			"symbols": [
+				{
+					"name": "markStale",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "function markStale(key: QueryKey): void",
+							"summary": "Mark one query stale without refetching it.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "key",
+									"type": "QueryKey",
+									"required": true,
+									"default": null,
+									"description": "Query to mark."
+								}
+							],
+							"returns": {},
+							"throws": [],
+							"sourcePath": "src/cache/stale.ts",
+							"sourceLine": 6
+						}
+					]
+				},
+				{
+					"name": "getCache",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "function getCache(): Cache",
+							"summary": "Access the cache backing the current client.",
+							"status": "stable",
+							"params": [],
+							"returns": {
+								"type": "Cache",
+								"description": "the live cache instance"
+							},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "clear",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "function clear(): void",
+							"summary": "Drop every cached result.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "CacheEntry",
+					"kind": "type",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "interface CacheEntry<T> {\n  data: T\n  updatedAt: number\n  status: 'fresh' | 'stale'\n}",
+							"summary": "One stored result and its freshness.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "useStaleWhileRevalidate",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": "v4.0",
+							"signature": "function useStaleWhileRevalidate(): void",
+							"summary": "Enable stale-while-revalidate globally.",
+							"status": "deprecated",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "tessel/server",
+			"summary": "Render on the server and hand the cache to the client.",
+			"sortOrder": 3,
+			"symbols": [
+				{
+					"name": "dehydrate",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v3.0",
+							"removed": null,
+							"signature": "function dehydrate(cache: Cache): DehydratedState",
+							"summary": "Serialize the cache for transfer to the client.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "cache",
+									"type": "Cache",
+									"required": true,
+									"default": null,
+									"description": "Cache to serialize."
+								}
+							],
+							"returns": {
+								"type": "DehydratedState",
+								"description": "JSON-safe snapshot"
+							},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "hydrate",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v3.0",
+							"removed": null,
+							"signature": "function hydrate(state: DehydratedState): void",
+							"summary": "Load a serialized cache into the client.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "state",
+									"type": "DehydratedState",
+									"required": true,
+									"default": null,
+									"description": "Snapshot from dehydrate()."
+								}
+							],
+							"returns": {},
+							"throws": [
+								{
+									"type": "HydrationMismatchError",
+									"description": "snapshot came from a different library version"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "createServerClient",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v4.1",
+							"removed": null,
+							"signature": "function createServerClient(opts?: ServerClientOptions): Client",
+							"summary": "Create a request-scoped client that never shares cache between requests.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "opts",
+									"type": "ServerClientOptions",
+									"required": false,
+									"default": null,
+									"description": "Per-request overrides."
+								}
+							],
+							"returns": {
+								"type": "Client",
+								"description": "dispose it when the request ends"
+							},
+							"throws": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "tessel/devtools",
+			"summary": "Inspect queries in the browser.",
+			"sortOrder": 4,
+			"symbols": [
+				{
+					"name": "mountDevtools",
+					"kind": "fn",
+					"versions": [
+						{
+							"introduced": "v3.0",
+							"removed": null,
+							"signature": "function mountDevtools(el: HTMLElement, opts?: DevtoolsOptions): () => void",
+							"summary": "Render the devtools panel into an element.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "el",
+									"type": "HTMLElement",
+									"required": true,
+									"default": null,
+									"description": "Host element."
+								},
+								{
+									"name": "opts",
+									"type": "DevtoolsOptions",
+									"required": false,
+									"default": null,
+									"description": "Panel options."
+								}
+							],
+							"returns": {
+								"type": "() => void",
+								"description": "unmount function"
+							},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "DevtoolsOptions",
+					"kind": "type",
+					"versions": [
+						{
+							"introduced": "v3.0",
+							"removed": null,
+							"signature": "interface DevtoolsOptions {\n  position?: 'bottom' | 'right'\n  open?: boolean\n}",
+							"summary": "Options for the devtools panel.",
+							"status": "stable",
+							"params": [
+								{
+									"name": "position",
+									"type": "'bottom' | 'right'",
+									"required": false,
+									"default": "'bottom'",
+									"description": "Where the panel docks."
+								},
+								{
+									"name": "open",
+									"type": "boolean",
+									"required": false,
+									"default": "false",
+									"description": "Start expanded."
+								}
+							],
+							"returns": {},
+							"throws": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "tessel/errors",
+			"summary": "Errors thrown by the library.",
+			"sortOrder": 5,
+			"symbols": [
+				{
+					"name": "QueryKeyError",
+					"kind": "error",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "class QueryKeyError extends TesselError",
+							"summary": "A query key contained a value that cannot be serialized.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "FetchError",
+					"kind": "error",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "class FetchError extends TesselError",
+							"summary": "The fetcher rejected; wraps the original error.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "TimeoutError",
+					"kind": "error",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "class TimeoutError extends TesselError",
+							"summary": "The fetcher did not settle before the configured timeout.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "AbortedError",
+					"kind": "error",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "class AbortedError extends TesselError",
+							"summary": "The fetch was aborted through its signal.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "HydrationMismatchError",
+					"kind": "error",
+					"versions": [
+						{
+							"introduced": "v3.0",
+							"removed": null,
+							"signature": "class HydrationMismatchError extends TesselError",
+							"summary": "A dehydrated snapshot came from an incompatible version.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "StaleCacheError",
+					"kind": "error",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "class StaleCacheError extends TesselError",
+							"summary": "A read required fresh data but only stale data was available.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "MutationError",
+					"kind": "error",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "class MutationError extends TesselError",
+							"summary": "A mutation rejected; wraps the original error.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "InvalidOptionError",
+					"kind": "error",
+					"versions": [
+						{
+							"introduced": "v2.0",
+							"removed": null,
+							"signature": "class InvalidOptionError extends TesselError",
+							"summary": "An option was given a value outside its allowed range.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				},
+				{
+					"name": "DevtoolsError",
+					"kind": "error",
+					"versions": [
+						{
+							"introduced": "v3.0",
+							"removed": null,
+							"signature": "class DevtoolsError extends TesselError",
+							"summary": "The devtools panel could not mount.",
+							"status": "stable",
+							"params": [],
+							"returns": {},
+							"throws": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"pages": [
+		{
+			"mode": "home",
+			"slug": "index",
+			"title": "Tessel",
+			"summary": "Declarative server data for the browser: declare a query once, read it anywhere, and let the cache decide when to refetch.",
+			"body": "Tessel keeps one cache of server data per app. Components declare which query they read, the cache hands back whatever it holds right away, and a refetch runs in the background only when the data has gone stale. There is no store to wire up and no loading state to thread through props.\n\n## Install\n\n<<sample:install>>\n\n## Your first query\n\nA query is a key plus a fetcher. Read it in any component and Tessel dedupes the request, shares the result, and keeps it fresh according to {sym:tessel/query#QueryOptions.staleTime}.\n\n<<sample:hello>>\n\nFrom here, the course walks through loading states, mutations, and server rendering in about an afternoon. If you already know what you want to do, the Do tab is task-shaped recipes and the Reference tab is every symbol with its contract per version.",
+			"introduced": "v2.0",
+			"removed": null,
+			"minutes": null,
+			"symbols": [
+				{
+					"ref": "tessel/query#QueryOptions.staleTime",
+					"role": "mentions"
+				}
+			],
+			"samples": [
+				{
+					"key": "install",
+					"language": "ts",
+					"variant": "pnpm",
+					"code": "pnpm add tessel\n",
+					"tested": false,
+					"lastTestPass": null,
+					"title": "terminal"
+				},
+				{
+					"key": "install",
+					"language": "ts",
+					"variant": "npm",
+					"code": "npm install tessel\n",
+					"tested": false,
+					"lastTestPass": null,
+					"title": "terminal"
+				},
+				{
+					"key": "install",
+					"language": "ts",
+					"variant": "yarn",
+					"code": "yarn add tessel\n",
+					"tested": false,
+					"lastTestPass": null,
+					"title": "terminal"
+				},
+				{
+					"key": "hello",
+					"language": "ts",
+					"variant": null,
+					"code": "import { createQuery } from \"tessel\";\n\nexport const profile = createQuery([\"profile\", \"me\"], () => api.get<Profile>(\"/me\"));\n\n// Read `profile` in any component: cached value now, refetch only once it is stale.\n",
+					"tested": true,
+					"lastTestPass": "v4.2",
+					"title": "profile.ts"
+				},
+				{
+					"key": "hello",
+					"language": "js",
+					"variant": null,
+					"code": "import { createQuery } from \"tessel\";\n\nexport const profile = createQuery([\"profile\", \"me\"], () => api.get(\"/me\"));\n\n// Read `profile` in any component: cached value now, refetch only once it is stale.\n",
+					"tested": true,
+					"lastTestPass": "v4.2",
+					"title": "profile.js"
+				}
+			]
+		},
+		{
+			"mode": "reference",
+			"slug": "tessel/query/createQuery",
+			"title": "createQuery",
+			"summary": "Declare a piece of server data once; read it anywhere, and let the cache decide when to refetch.",
+			"body": "## Minimal example\n\n<<sample:minimal>>\n\n## How freshness works\n\nA query result is **fresh** until {sym:tessel/query#QueryOptions.staleTime} elapses. Fresh reads never hit the network. Stale reads return the cached value immediately and refetch in the background.\n\n:::upgrade{from=v3.8 to=v4.0}\nThe default `staleTime` went from `0` to `30_000`.\n:::\n\n## Keys must be serializable\n\nEvery element of the key is compared by value, so it has to survive `JSON.stringify`. Passing a function or a class instance throws {sym:tessel/errors#QueryKeyError}.\n",
+			"introduced": "v2.0",
+			"removed": null,
+			"minutes": null,
+			"symbols": [
+				{
+					"ref": "tessel/query#createQuery",
+					"role": "subject"
+				},
+				{
+					"ref": "tessel/query#QueryOptions.staleTime",
+					"role": "mentions"
+				},
+				{
+					"ref": "tessel/errors#QueryKeyError",
+					"role": "mentions"
+				}
+			],
+			"samples": [
+				{
+					"key": "minimal",
+					"language": "ts",
+					"variant": null,
+					"code": "import { createQuery } from \"tessel\";\n\nexport const user = (id: string) =>\n  createQuery([\"user\", id], () => api.get<User>(`/users/${id}`));\n",
+					"tested": true,
+					"lastTestPass": "v4.2",
+					"title": "user.ts"
+				},
+				{
+					"key": "minimal",
+					"language": "js",
+					"variant": null,
+					"code": "import { createQuery } from \"tessel\";\n\nexport const user = (id) =>\n  createQuery([\"user\", id], () => api.get(`/users/${id}`));\n",
+					"tested": true,
+					"lastTestPass": "v4.2",
+					"title": "user.js"
+				},
+				{
+					"key": "install",
+					"language": "ts",
+					"variant": "pnpm",
+					"code": "pnpm add tessel\n",
+					"title": "terminal"
+				},
+				{
+					"key": "install",
+					"language": "ts",
+					"variant": "npm",
+					"code": "npm install tessel\n",
+					"title": "terminal"
+				},
+				{
+					"key": "install",
+					"language": "ts",
+					"variant": "yarn",
+					"code": "yarn add tessel\n",
+					"title": "terminal"
+				}
+			]
+		},
+		{
+			"mode": "reference",
+			"slug": "tessel/query/prefetch",
+			"title": "prefetch",
+			"summary": "Warm the cache for a query you're about to need, without subscribing to it.",
+			"body": "## When to prefetch\n\nCall {sym:tessel/query#prefetch} on hover or on route transition so the data is already in the cache when the screen mounts. It never subscribes, so nothing re-renders when the value changes.\n",
+			"introduced": "v3.0",
+			"removed": null,
+			"minutes": null,
+			"symbols": [
+				{
+					"ref": "tessel/query#prefetch",
+					"role": "subject"
+				}
+			],
+			"samples": []
+		},
+		{
+			"mode": "do",
+			"slug": "show-cached-data-while-refetching",
+			"title": "Show cached data while refetching",
+			"summary": "Render the stale value immediately and let the background refetch replace it.",
+			"body": "1. Read the query as usual.\n2. Check `query.isRefetching` to show a subtle indicator.\n3. Do not gate rendering on `isLoading` after the first load.\n",
+			"introduced": "v2.0",
+			"removed": null,
+			"minutes": 3,
+			"symbols": [
+				{
+					"ref": "tessel/query#createQuery",
+					"role": "mentions"
+				},
+				{
+					"ref": "tessel/query#QueryOptions.staleTime",
+					"role": "mentions"
+				}
+			],
+			"samples": []
+		},
+		{
+			"mode": "do",
+			"slug": "force-a-refetch-after-a-mutation",
+			"title": "Force a refetch after a mutation",
+			"summary": "Invalidate the affected keys when a write succeeds.",
+			"body": "Call {sym:tessel/query#invalidate} from the mutation's success callback with the key prefix you wrote to.\n",
+			"introduced": "v2.0",
+			"removed": null,
+			"minutes": 2,
+			"symbols": [
+				{
+					"ref": "tessel/query#invalidate",
+					"role": "mentions"
+				},
+				{
+					"ref": "tessel/query#createMutation",
+					"role": "mentions"
+				}
+			],
+			"samples": []
+		},
+		{
+			"mode": "do",
+			"slug": "prefetch-on-hover",
+			"title": "Prefetch on hover",
+			"summary": "Start loading before the click.",
+			"body": "Attach {sym:tessel/query#prefetch} to `pointerenter` on the link that leads to the screen.\n",
+			"introduced": "v3.0",
+			"removed": null,
+			"minutes": 2,
+			"symbols": [
+				{
+					"ref": "tessel/query#prefetch",
+					"role": "mentions"
+				}
+			],
+			"samples": []
+		},
+		{
+			"mode": "explain",
+			"slug": "cache-lifecycle",
+			"title": "Fresh, stale, and garbage-collected: the cache lifecycle",
+			"summary": "What happens to a result from the moment it arrives until it is dropped.",
+			"body": "A result is **fresh** for `staleTime`, then **stale** until it is read again, and it is **garbage-collected** once nothing has read it for `gcTime`.\n",
+			"introduced": "v2.0",
+			"removed": null,
+			"minutes": null,
+			"symbols": [
+				{
+					"ref": "tessel/query#QueryOptions.staleTime",
+					"role": "mentions"
+				},
+				{
+					"ref": "tessel/query#QueryOptions.gcTime",
+					"role": "mentions"
+				}
+			],
+			"samples": []
+		},
+		{
+			"mode": "explain",
+			"slug": "why-prefetch-doesnt-subscribe",
+			"title": "Why prefetch doesn't subscribe",
+			"summary": "Prefetching fills the cache; subscribing observes it.",
+			"body": "Subscribing would keep the result alive and trigger re-renders in components that never asked for it.\n",
+			"introduced": "v3.0",
+			"removed": null,
+			"minutes": null,
+			"symbols": [
+				{
+					"ref": "tessel/query#prefetch",
+					"role": "mentions"
+				}
+			],
+			"samples": []
+		},
+		{
+			"mode": "explain",
+			"slug": "fetching-on-the-server",
+			"title": "Fetching on the server",
+			"summary": "How the cache travels from server render to client hydration.",
+			"body": "Dehydrate the request-scoped cache after rendering and hydrate it before the first client read.\n",
+			"introduced": "v3.0",
+			"removed": null,
+			"minutes": null,
+			"symbols": [
+				{
+					"ref": "tessel/server#dehydrate",
+					"role": "mentions"
+				},
+				{
+					"ref": "tessel/server#hydrate",
+					"role": "mentions"
+				},
+				{
+					"ref": "tessel/server#createServerClient",
+					"role": "mentions"
+				}
+			],
+			"samples": []
+		},
+		{
+			"mode": "learn",
+			"slug": "your-first-query",
+			"title": "Your first query",
+			"summary": "Declare a query and read it in a component.",
+			"body": "Declare the profile query, read it, and watch the network log.\n",
+			"introduced": "v2.0",
+			"removed": null,
+			"minutes": 8,
+			"symbols": [],
+			"samples": []
+		},
+		{
+			"mode": "learn",
+			"slug": "loading-and-error-states",
+			"title": "Loading and error states",
+			"summary": "Render something sensible before data arrives and when it fails.",
+			"body": "Use `isLoading` and `error` from the query.\n",
+			"introduced": "v2.0",
+			"removed": null,
+			"minutes": 10,
+			"symbols": [],
+			"samples": []
+		},
+		{
+			"mode": "learn",
+			"slug": "keep-data-fresh-without-refetching",
+			"title": "Keep data fresh without refetching",
+			"summary": "Explain the difference between fresh and stale data, and choose a staleTime for a real screen instead of guessing.",
+			"body": ":::card[You'll leave able to]\nExplain the difference between fresh and stale data, and choose a `staleTime` for a real screen instead of guessing.\n:::\n\nIn the workspace, clicking **Load profile** twice fetches the user twice. Nothing changed on the server in between, so the second request was wasted.\n\nTessel treats every result as **fresh** for a window of time. Inside that window, reads come straight from the cache. You set the window with {sym:tessel/query#QueryOptions.staleTime}.\n\nOnce that works, wait out the ten seconds and click again. The stale value appears instantly, and a background refetch replaces it. That's the next step.\n",
+			"introduced": "v2.0",
+			"removed": null,
+			"minutes": 12,
+			"symbols": [
+				{
+					"ref": "tessel/query#QueryOptions.staleTime",
+					"role": "mentions"
+				},
+				{
+					"ref": "tessel/query#createQuery",
+					"role": "mentions"
+				}
+			],
+			"samples": [
+				{
+					"key": "profile",
+					"title": "profile.ts",
+					"language": "ts",
+					"variant": null,
+					"code": "import { createQuery } from \"tessel\";\n\nexport const profile = createQuery(\n  [\"profile\", \"me\"],\n  () => api.get<User>(\"/me\"),\n  { staleTime: 10_000 }\n);\n",
+					"tested": false,
+					"lastTestPass": null
+				},
+				{
+					"key": "profile",
+					"title": "profile.js",
+					"language": "js",
+					"variant": null,
+					"code": "import { createQuery } from \"tessel\";\n\nexport const profile = createQuery(\n  [\"profile\", \"me\"],\n  () => api.get(\"/me\"),\n  { staleTime: 10_000 }\n);\n",
+					"tested": false,
+					"lastTestPass": null
+				},
+				{
+					"key": "api",
+					"title": "api.ts",
+					"language": "ts",
+					"variant": null,
+					"code": "export const api = {\n  get: <T>(path: string) => fetch(path).then((r) => r.json() as Promise<T>),\n};\n",
+					"tested": false,
+					"lastTestPass": null
+				}
+			]
+		},
+		{
+			"mode": "learn",
+			"slug": "writing-data-with-mutations",
+			"title": "Writing data with mutations",
+			"summary": "Send a write and keep the cache honest afterwards.",
+			"body": "Declare a mutation and invalidate on success.\n",
+			"introduced": "v2.0",
+			"removed": null,
+			"minutes": 15,
+			"symbols": [
+				{
+					"ref": "tessel/query#createMutation",
+					"role": "mentions"
+				}
+			],
+			"samples": []
+		},
+		{
+			"mode": "learn",
+			"slug": "rendering-on-the-server",
+			"title": "Rendering on the server",
+			"summary": "Dehydrate on the server, hydrate on the client.",
+			"body": "Create a server client per request.\n",
+			"introduced": "v3.0",
+			"removed": null,
+			"minutes": 15,
+			"symbols": [
+				{
+					"ref": "tessel/server#createServerClient",
+					"role": "mentions"
+				}
+			],
+			"samples": []
+		}
+	],
+	"changes": [
+		{
+			"version": "v4.0",
+			"kind": "breaking",
+			"title": "staleTime default: 0 → 30s",
+			"why": "In v3, every read of a mounted query could trigger a refetch. Most apps set staleTime by hand everywhere to stop it, so v4 picks a default that matches what people were already doing.",
+			"rfcUrl": "https://github.com/example/tessel/discussions/412",
+			"beforeCode": "createQuery(key, fetcher)\n// read at 0s   → network\n// read at 5s   → network\n// read at 40s  → network",
+			"afterCode": "createQuery(key, fetcher)\n// read at 0s   → network\n// read at 5s   → cache\n// read at 40s  → cache, then refetch",
+			"codemodCmd": "pnpm dlx tessel-migrate stale-time ./src",
+			"sortOrder": 1,
+			"symbols": [
+				"tessel/query#QueryOptions.staleTime",
+				"tessel/query#createQuery"
+			]
+		},
+		{
+			"version": "v4.0",
+			"kind": "breaking",
+			"title": "QueryKey must be serializable",
+			"why": "Structural key comparison needs a stable serialization; functions and class instances silently produced cache misses.",
+			"sortOrder": 2,
+			"symbols": [
+				"tessel/query#QueryKey",
+				"tessel/errors#QueryKeyError"
+			]
+		},
+		{
+			"version": "v4.0",
+			"kind": "breaking",
+			"title": "retry skips 4xx responses",
+			"why": "Retrying a request the server already rejected wastes time and can double-submit.",
+			"sortOrder": 3,
+			"symbols": [
+				"tessel/query#QueryOptions.retry"
+			]
+		},
+		{
+			"version": "v4.0",
+			"kind": "breaking",
+			"title": "useLegacyCache removed",
+			"why": "The v1 cache semantics were kept for two majors; nothing in the ecosystem still needed them.",
+			"codemodCmd": "pnpm dlx tessel-migrate legacy-cache ./src",
+			"sortOrder": 4,
+			"symbols": [
+				"tessel/query#useLegacyCache",
+				"tessel/cache#useStaleWhileRevalidate"
+			]
+		},
+		{
+			"version": "v4.1",
+			"kind": "behavior",
+			"title": "No refetch on window focus by default",
+			"why": "Focus refetches surprised more users than they helped; opt in per query.",
+			"sortOrder": 1,
+			"symbols": [
+				"tessel/query#QueryOptions"
+			]
+		},
+		{
+			"version": "v4.1",
+			"kind": "behavior",
+			"title": "Errors keep last good data",
+			"why": "A failed refetch no longer clears the previous value, so screens degrade instead of blanking.",
+			"sortOrder": 2,
+			"symbols": [
+				"tessel/query#createQuery"
+			]
+		},
+		{
+			"version": "v4.2",
+			"kind": "behavior",
+			"title": "prefetch resolves on cache hit",
+			"why": "Awaiting prefetch used to hang until the next network fetch even when the cache was fresh.",
+			"sortOrder": 1,
+			"symbols": [
+				"tessel/query#prefetch"
+			]
+		},
+		{
+			"version": "v4.2",
+			"kind": "deprecated",
+			"title": "invalidate(string) → invalidate(key)",
+			"why": "String prefixes could not express array keys; pass the same QueryKey you queried with.",
+			"codemodCmd": "pnpm dlx tessel-migrate invalidate-keys ./src",
+			"sortOrder": 1,
+			"symbols": [
+				"tessel/query#invalidate"
+			]
+		},
+		{
+			"version": "v4.2",
+			"kind": "deprecated",
+			"title": "onSettled option",
+			"why": "Subscribe to the query instead; the callback ran outside the render lifecycle.",
+			"sortOrder": 2,
+			"symbols": [
+				"tessel/query#QueryOptions.onSettled"
+			]
+		},
+		{
+			"version": "v4.0",
+			"kind": "added",
+			"title": "signal option for cancellation",
+			"why": "Forward an AbortSignal so unmounting can cancel in-flight fetches.",
+			"sortOrder": 1,
+			"symbols": [
+				"tessel/query#QueryOptions.signal"
+			]
+		},
+		{
+			"version": "v4.1",
+			"kind": "added",
+			"title": "createServerClient",
+			"why": "A request-scoped client stops cache leaking between concurrent server renders.",
+			"sortOrder": 1,
+			"symbols": [
+				"tessel/server#createServerClient"
+			]
+		}
+	],
+	"courses": [
+		{
+			"slug": "tessel-in-an-afternoon",
+			"title": "Tessel in an afternoon",
+			"summary": "Five lessons from first query to server rendering.",
+			"sortOrder": 1,
+			"lessons": [
+				{
+					"page": "learn/your-first-query",
+					"ordinal": 1,
+					"steps": [
+						{
+							"ordinal": 1,
+							"prompt": "Declare a query for `/me` and read it in the component.",
+							"hint": "createQuery takes a key and a fetcher.",
+							"answer": "export const profile = createQuery([\"profile\", \"me\"], () => api.get(\"/me\"));",
+							"expectedOutput": "GET /me 200"
+						}
+					]
+				},
+				{
+					"page": "learn/loading-and-error-states",
+					"ordinal": 2,
+					"steps": [
+						{
+							"ordinal": 1,
+							"prompt": "Show a spinner while `isLoading` is true.",
+							"hint": "The query exposes isLoading and error.",
+							"answer": "if (profile.isLoading) return <Spinner />;",
+							"expectedOutput": "Spinner rendered, then profile"
+						}
+					]
+				},
+				{
+					"page": "learn/keep-data-fresh-without-refetching",
+					"ordinal": 3,
+					"steps": [
+						{
+							"ordinal": 1,
+							"prompt": "Click **Load profile** twice and read the network log.",
+							"hint": "Both clicks hit the network.",
+							"answer": null,
+							"expectedOutput": "GET /me 200 · 184 ms\nGET /me 200 · 171 ms"
+						},
+						{
+							"ordinal": 2,
+							"prompt": "Pass `{ staleTime: 10_000 }` as the third argument, then click **Load profile** twice within ten seconds. The network log should show one request, then one cache hit.",
+							"hint": "The third argument to createQuery is the options object.",
+							"answer": "createQuery([\"profile\", \"me\"], () => api.get<User>(\"/me\"), { staleTime: 10_000 })",
+							"expectedOutput": "One request, two cache hits. Step 3 is next in the lesson."
+						},
+						{
+							"ordinal": 3,
+							"prompt": "Wait out the ten seconds and click again. The stale value appears instantly, and a background refetch replaces it.",
+							"hint": "Watch for a CACHE line followed by a NETWORK line.",
+							"answer": null,
+							"expectedOutput": "CACHE profile/me · stale\nGET /me 200 · 190 ms"
+						}
+					]
+				},
+				{
+					"page": "learn/writing-data-with-mutations",
+					"ordinal": 4,
+					"steps": [
+						{
+							"ordinal": 1,
+							"prompt": "Declare a mutation that updates the display name and invalidates the profile on success.",
+							"hint": "Use createMutation and call invalidate in onSuccess.",
+							"answer": "createMutation(rename, { onSuccess: () => invalidate([\"profile\"]) })",
+							"expectedOutput": "POST /me 200 then GET /me 200"
+						}
+					]
+				},
+				{
+					"page": "learn/rendering-on-the-server",
+					"ordinal": 5,
+					"steps": [
+						{
+							"ordinal": 1,
+							"prompt": "Create a server client, render, and dehydrate the cache into the HTML.",
+							"hint": "createServerClient, then dehydrate.",
+							"answer": "const client = createServerClient(); ...; const state = dehydrate(client.cache);",
+							"expectedOutput": "__TESSEL_STATE__ present in HTML"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,184 @@
+/* Admin baseline on top of the shared tokens. PrimeVue supplies component styling (Aura, re-colored); this file
+   only sets the page frame and a few utilities the views share. */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--color-ground);
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+	font-size: var(--text-small);
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin: 0;
+}
+
+a {
+	color: var(--color-accent);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+code,
+pre,
+.mono {
+	font-family: var(--font-mono);
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	padding: 24px 28px 48px;
+	max-width: 1400px;
+}
+
+.page__head {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+.page__title {
+	font-family: var(--font-serif);
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 1.2;
+}
+
+.page__subtitle {
+	color: var(--color-muted);
+	margin-top: 4px;
+}
+
+.label {
+	font-size: var(--text-label);
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+}
+
+.form {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	gap: 14px 16px;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	grid-column: span 12;
+}
+
+.field--9 {
+	grid-column: span 9;
+}
+
+.field--8 {
+	grid-column: span 8;
+}
+
+.field--6 {
+	grid-column: span 6;
+}
+
+.field--4 {
+	grid-column: span 4;
+}
+
+.field--3 {
+	grid-column: span 3;
+}
+
+.field--2 {
+	grid-column: span 2;
+}
+
+.field > label {
+	font-size: var(--text-meta);
+	font-weight: 500;
+	color: var(--color-ink3);
+}
+
+.field__hint {
+	font-size: var(--text-label);
+	color: var(--color-muted);
+}
+
+.field__error {
+	font-size: var(--text-label);
+	color: var(--color-warn-text);
+}
+
+.field--inline {
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+}
+
+.card {
+	background: var(--color-surface);
+	border: 1px solid var(--color-rule);
+	border-radius: var(--radius-card);
+	padding: 18px 20px;
+}
+
+.stack {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.muted {
+	color: var(--color-muted);
+}
+
+.dark-code {
+	background: var(--pane-code);
+	color: var(--pane-text);
+	border-radius: var(--radius-card);
+	padding: 12px 14px;
+	font-size: var(--text-meta);
+	line-height: 1.6;
+	overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+	.field--9,
+	.field--8,
+	.field--6,
+	.field--4,
+	.field--3,
+	.field--2 {
+		grid-column: span 12;
+	}
+
+	.page {
+		padding: 16px;
+	}
+}

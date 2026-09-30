@@ -1,11 +1,36 @@
 {
-	"name": "stoic/docs",
-	"description": "Documentation site for the Stoic Framework",
-	"version": "1.2.0",
-	"homepage": "https://stoic-framework.com",
-	"require": {
-		"php": "^8.4",
-		"league/plates": "^3.3",
-		"stoic/web": "^1"
+	"repositories": [
+		{
+			"url": "https://github.com/AndyM84/pseudo.git",
+			"type": "vcs"
+		}
+	],
+	"require" : {
+		"php" : "^8.4",
+		"stoic/web" : "^1.3",
+		"phpmailer/phpmailer" : "^6.2",
+		"hybridauth/hybridauth" : "*",
+		"ext-curl" : "*",
+		"ext-pdo" : "*",
+		"nikic/php-parser": "^5.1",
+		"symfony/yaml": "^7.0"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "^9.5",
+		"zircote/swagger-php" : "^4",
+		"psr/cache" : "^3",
+		"doctrine/annotations" : "^1",
+		"psr/simple-cache" : "^3",
+		"symfony/browser-kit" : "^6",
+		"symfony/dependency-injection" : "^6",
+		"symfony/event-dispatcher" : "^6",
+		"symfony/config" : "^6",
+		"symfony/expression-language" : "^6",
+		"symfony/http-kernel" : "^6",
+		"symfony/messenger" : "^6",
+		"symfony/console" : "^6",
+		"symfony/serializer" : "^6",
+		"symfony/translation-contracts" : "^3",
+		"jimbojsb/pseudo": "dev-AndyM84-8_3"
 	}
 }

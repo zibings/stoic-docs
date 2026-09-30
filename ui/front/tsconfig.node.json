@@ -1,0 +1,33 @@
+{
+	"extends": "@tsconfig/node22/tsconfig.json",
+	"include": [
+		"vite.config.*",
+		"vitest.config.*",
+		"build/**/*.ts",
+		"scripts/*.mjs",
+		"src/search/index.ts",
+		"../shared/types/docs.ts"
+	],
+	"compilerOptions": {
+		"composite": true,
+		"noEmit": true,
+		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"types": [
+			"node"
+		],
+		"allowJs": true,
+		"checkJs": false,
+		"resolveJsonModule": true,
+		"baseUrl": ".",
+		"paths": {
+			"types/*": [
+				"../shared/types/*"
+			],
+			"search/*": [
+				"src/search/*"
+			]
+		}
+	}
+}

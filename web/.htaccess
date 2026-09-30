@@ -1,0 +1,32 @@
+Options +SymLinksIfOwnerMatch
+RewriteEngine On
+RewriteBase /
+
+# mod_dir would otherwise redirect /v4.2/learn to /v4.2/learn/ before our rules run, because a directory of that name
+# exists. The rules below restore the slash redirect only for directories that really have an index of their own.
+DirectorySlash Off
+
+# Pre-rendered pages are flat files: /v4.2/do/prefetch-on-hover is served from /v4.2/do/prefetch-on-hover.html.
+# The .html file wins over a same-named directory, so /v4.2/learn serves learn.html even though /v4.2/learn/ holds lessons.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Directories with their own index (the API, the admin app, Swagger UI) keep the canonical trailing slash
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f [OR]
+RewriteCond %{REQUEST_FILENAME}/index.php -f
+RewriteRule ^(.*)$ /$1/ [R=301,L]
+
+# A directory with no index of its own (such as /v4.2/learn/) is not a page; hand it to the app shell instead of a listing
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html !-f
+RewriteCond %{REQUEST_FILENAME}/index.php !-f
+RewriteRule . /index.html [L]
+
+# Everything else that is not a real file or directory falls back to the app shell
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]

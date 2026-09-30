@@ -1,0 +1,34 @@
+ARG NODE_VERSION=24
+
+FROM node:${NODE_VERSION}
+
+ENV NODE_ENV=development
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+ENV HOST=0.0.0.0
+
+# APP is the workspace package to run: front or admin
+ARG APP=front
+ENV APP=${APP}
+
+RUN corepack enable && corepack prepare pnpm@11.10.0 --activate
+
+WORKDIR /app
+
+# The whole ui/ workspace is the build context so shared/ resolves.
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+COPY front/package.json front/
+COPY admin/package.json admin/
+COPY shared/package.json shared/
+
+RUN pnpm install --frozen-lockfile
+
+COPY . .
+
+RUN chown -R node:node /app
+
+EXPOSE 5173 5174
+
+USER node
+
+CMD ["/bin/sh", "-c", "pnpm install --frozen-lockfile; pnpm --dir ${APP} dev"]
