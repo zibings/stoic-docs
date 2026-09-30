@@ -4,8 +4,8 @@
 	"version": "1.2.0",
 	"homepage": "https://stoic-framework.com",
 	"require": {
-		"php": "^8.2",
+		"php": "^8.4",
 		"league/plates": "^3.3",
-		"stoic/web": "^1.2"
+		"stoic/web": "^1"
 	}
 }
