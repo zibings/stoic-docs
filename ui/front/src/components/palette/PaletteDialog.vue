@@ -51,7 +51,7 @@ const pt = {
 	justify-content: center;
 	align-items: flex-start;
 	padding: 96px 16px 16px;
-	background: rgba(217, 213, 204, 0.92);
+	background: var(--color-mask);
 }
 
 .palette-root {

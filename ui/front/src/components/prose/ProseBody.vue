@@ -67,6 +67,27 @@ defineExpose({ root, html });
 	color: var(--color-ink);
 }
 
+/* Anchor targets (table of contents, shared links) land below the sticky header, not under it. */
+.prose h2,
+.prose h3 {
+	scroll-margin-top: calc(var(--header-height) + 20px);
+}
+
+@media (max-width: 1180px) {
+	.prose h2,
+	.prose h3 {
+		/* the context chip row sits under the bar at this width */
+		scroll-margin-top: calc(var(--header-height) + 73px);
+	}
+}
+
+@media (max-width: 768px) {
+	.prose h2,
+	.prose h3 {
+		scroll-margin-top: calc(var(--header-height-mobile) + 73px);
+	}
+}
+
 .prose ul,
 .prose ol {
 	margin: 0;

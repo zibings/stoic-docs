@@ -13,7 +13,7 @@
 	color: var(--pane-text);
 	border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
 	font-family: var(--font-mono);
-	box-shadow: 0 -8px 24px rgba(22, 24, 29, 0.18);
+	box-shadow: var(--shadow-sheet);
 }
 
 .sheet__handle {
@@ -78,7 +78,7 @@
 	position: fixed;
 	inset: 0;
 	z-index: 30;
-	background: rgba(22, 24, 29, 0.45);
+	background: var(--color-scrim);
 	display: flex;
 	align-items: flex-end;
 }

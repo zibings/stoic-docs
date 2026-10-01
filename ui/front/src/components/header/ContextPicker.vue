@@ -111,7 +111,7 @@ const pt = {
 	background: var(--color-surface);
 	border: 1px solid var(--color-dialog-border);
 	border-radius: var(--radius-card);
-	box-shadow: 0 8px 24px rgba(22, 24, 29, 0.12);
+	box-shadow: var(--shadow-popover);
 	overflow: hidden;
 	z-index: 50;
 }

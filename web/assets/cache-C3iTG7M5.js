@@ -1,0 +1,1 @@
+import{f as e}from"./site-DKWBEO0o.js";var t=e(`cache`,{state:()=>({entries:{},misses:{}}),actions:{set(e,t){this.entries[e]=t,delete this.misses[e]},miss(e,t){this.misses[e]=t,delete this.entries[e]}}});export{t};

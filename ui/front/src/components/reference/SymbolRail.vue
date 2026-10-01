@@ -41,28 +41,7 @@ const emit = defineEmits<{ (e: "browse"): void }>();
 </script>
 
 <style>
-.rail {
-	display: flex;
-	flex-direction: column;
-	gap: 32px;
-	padding: 28px 20px;
-	border-right: 1px solid var(--color-rule);
-	position: sticky;
-	top: var(--header-height);
-	height: calc(100vh - var(--header-height));
-	overflow-y: auto;
-}
-
-.rail__section {
-	display: flex;
-	flex-direction: column;
-	gap: 6px;
-}
-
-.rail__section .label {
-	margin-bottom: 2px;
-}
-
+/* .rail, .rail__section and .rail__browse* live in styles/rail.css (shared with the prose-page table of contents). */
 .rail__trail-link {
 	font-size: var(--text-small);
 	color: var(--color-muted);
@@ -96,28 +75,5 @@ const emit = defineEmits<{ (e: "browse"): void }>();
 	background: var(--color-chip);
 	color: var(--color-ink);
 	font-weight: 500;
-}
-
-.rail__browse {
-	margin-top: auto;
-	height: var(--touch-target);
-	padding: 0 12px;
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	background: var(--color-surface);
-	border: 1px solid var(--color-control-border);
-	border-radius: var(--radius-card);
-	color: var(--color-ink);
-	font-size: var(--text-small);
-	text-align: left;
-}
-
-.rail__browse:hover {
-	border-color: var(--color-faint);
-}
-
-.rail__browse-text {
-	flex: 1 1 auto;
 }
 </style>

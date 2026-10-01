@@ -1,0 +1,1 @@
+import{t as e,v as t}from"./site-DKWBEO0o.js";import{n}from"./app-BYAX005c.js";function r(r,i){let a=e();n({title:t(()=>r.value?`${r.value} · ${a.libraryName}`:a.libraryName),meta:t(()=>i.value?[{name:`description`,content:i.value}]:[])})}export{r as t};

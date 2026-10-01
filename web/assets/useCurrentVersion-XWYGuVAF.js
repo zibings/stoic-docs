@@ -1,0 +1,1 @@
+import{l as e,t,v as n}from"./site-DKWBEO0o.js";function r(){let r=e(),i=t(),a=n(()=>{let e=r.params.to??r.params.version;return typeof e==`string`?e:null});return{label:a,fromLabel:n(()=>typeof r.params.from==`string`?r.params.from:null),version:n(()=>a.value?i.versionByLabel(a.value):void 0),isUpgrade:n(()=>r.name===`upgrade`)}}export{r as t};

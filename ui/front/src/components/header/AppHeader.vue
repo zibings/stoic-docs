@@ -10,12 +10,14 @@
 			<ModeTabs class="app-header__tabs" :modes="site.modes" :active="activeMode" :version="tabVersion" />
 			<SearchTrigger class="app-header__search" @open="ui.openSearch()" />
 			<ContextBar ref="contextBar" class="app-header__context" />
+			<ThemeToggle class="app-header__theme" />
 
 			<div class="app-header__mobile-actions">
 				<button type="button" class="icon-button" aria-label="Browse all" @click="ui.openBrowse()">
 					<TreeIcon :size="20" />
 				</button>
 				<SearchTrigger compact @open="ui.openSearch()" />
+				<ThemeToggle />
 			</div>
 		</div>
 		<div class="app-header__mobile-context">
@@ -33,6 +35,7 @@ import ChevronDownIcon from "components/icons/ChevronDownIcon.vue";
 import MobileContextChip from "components/header/MobileContextChip.vue";
 import ModeTabs from "components/header/ModeTabs.vue";
 import SearchTrigger from "components/header/SearchTrigger.vue";
+import ThemeToggle from "components/header/ThemeToggle.vue";
 import TreeIcon from "components/icons/TreeIcon.vue";
 import { useCurrentVersion } from "composables/useCurrentVersion";
 import { useSiteStore } from "stores/site";
@@ -153,6 +156,10 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKeydown));
 	margin-left: auto;
 }
 
+.app-header__theme {
+	margin-left: -12px;
+}
+
 .app-header__mobile-actions {
 	display: none;
 	margin-left: auto;
@@ -173,7 +180,8 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKeydown));
 	}
 
 	.app-header__search,
-	.app-header__context {
+	.app-header__context,
+	.app-header__theme {
 		display: none;
 	}
 

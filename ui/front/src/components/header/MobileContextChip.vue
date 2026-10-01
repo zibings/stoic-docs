@@ -114,7 +114,7 @@ const pt = {
 	background: var(--color-surface);
 	border: 1px solid var(--color-dialog-border);
 	border-radius: var(--radius-dialog);
-	box-shadow: 0 12px 32px rgba(22, 24, 29, 0.16);
+	box-shadow: var(--shadow-dialog);
 	z-index: 50;
 }
 

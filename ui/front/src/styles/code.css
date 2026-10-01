@@ -47,6 +47,19 @@
 	color: var(--color-ink2);
 }
 
+/* Scrolling code keeps a thin themed scrollbar instead of the platform's light track, which shows on dark surfaces. */
+.code-block,
+.code-sample__pre,
+.contract__signature {
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-control-border) transparent;
+}
+
+.pane .contract__signature,
+.pane pre {
+	scrollbar-color: var(--pane-control-border) transparent;
+}
+
 /* Inside the dark pane */
 .pane .hljs {
 	color: var(--pane-text);

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { collectSymbolRefs, pickSample, renderDocBody, renderInline } from "markdown/render";
+import { collectSymbolRefs, docOutline, pickSample, renderDocBody, renderInline } from "markdown/render";
 import type { RenderContext } from "markdown/render";
 import type { CodeSample, SymbolNode } from "types/docs";
 
@@ -106,6 +106,23 @@ describe("renderDocBody", () => {
 
 		expect(html).toContain('class="code-sample code-sample--missing card" data-sample-key="nope"');
 		expect(html).toContain("No sample “nope” for TypeScript at v4.2");
+	});
+
+	it("gives h2 and h3 headings deterministic ids that the outline shares", () => {
+		const body = "## Options\n\ntext\n\n### Options\n\n## Using {sym:tessel/query#QueryOptions.staleTime} & `code`\n\n#### Not listed\n";
+		const html = renderDocBody(body, ctx());
+
+		expect(html).toContain('<h2 id="options">Options</h2>');
+		expect(html).toContain('<h3 id="options-2">Options</h3>');
+		expect(html).toContain('<h2 id="using-staletime-code">');
+		expect(html).toContain("<h4>Not listed</h4>");
+
+		expect(docOutline(body)).toEqual([
+			{ level: 2, id: "options", text: "Options" },
+			{ level: 3, id: "options-2", text: "Options" },
+			{ level: 2, id: "using-staletime-code", text: "Using staleTime & code" },
+		]);
+		expect(docOutline("Just a paragraph.")).toEqual([]);
 	});
 
 	it("highlights fenced code and escapes raw HTML", () => {

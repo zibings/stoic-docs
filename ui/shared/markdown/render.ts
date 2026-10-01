@@ -28,6 +28,7 @@ export interface RenderContext {
 
 interface Env extends RenderContext {
 	counter: number;
+	outline?: OutlineHeading[];
 	[key: string]: unknown;
 }
 
@@ -47,6 +48,77 @@ export function collectSymbolRefs(nodes: Iterable<SymbolNode | null | undefined>
 	}
 
 	return into;
+}
+
+/** One heading of a page body, as the table of contents lists it. */
+export interface OutlineHeading {
+	/** 2 for `##`, 3 for `###`; deeper headings are not listed. */
+	level: 2 | 3;
+	id: string;
+	text: string;
+}
+
+const OUTLINE_LEVELS = new Set(["h2", "h3"]);
+
+/**
+ * Derives the anchor id for a heading from its text. Ids are deterministic so the pre-rendered page and the outline
+ * computed for the same body always agree; `used` de-duplicates repeats within one body (`options`, `options-2`).
+ */
+export function headingId(text: string, used: Map<string, number>): string {
+	const base =
+		text
+			.toLowerCase()
+			.normalize("NFKD")
+			.replace(/[\u0300-\u036f]/g, "")
+			.replace(/[^a-z0-9]+/g, "-")
+			.replace(/^-+|-+$/g, "") || "section";
+	const seen = used.get(base) ?? 0;
+
+	used.set(base, seen + 1);
+
+	return seen === 0 ? base : `${base}-${seen + 1}`;
+}
+
+function headingText(inline: Token | undefined): string {
+	return (inline?.children ?? [])
+		.map((child) => {
+			if (child.type === "sym_ref") {
+				const ref = String(metaOf(child).ref ?? "");
+				const name = ref.includes("#") ? ref.slice(ref.indexOf("#") + 1) : ref;
+
+				return name.includes(".") ? name.slice(name.lastIndexOf(".") + 1) : name;
+			}
+
+			return child.type === "text" || child.type === "code_inline" ? child.content : "";
+		})
+		.join("")
+		.trim();
+}
+
+/**
+ * Core rule: gives every `##` and `###` an id and records it in `env.outline`. Runs after inline parsing so the
+ * heading text is available, and before rendering so the id lands in the HTML.
+ */
+function outlineRule(state: { tokens: Token[]; env: Env }): void {
+	const used = new Map<string, number>();
+	const outline: OutlineHeading[] = [];
+	const tokens = state.tokens;
+
+	for (let i = 0; i < tokens.length; i++) {
+		const token = tokens[i];
+
+		if (token.type !== "heading_open" || !OUTLINE_LEVELS.has(token.tag)) {
+			continue;
+		}
+
+		const text = headingText(tokens[i + 1]);
+		const id = headingId(text, used);
+
+		token.attrSet("id", id);
+		outline.push({ level: token.tag === "h2" ? 2 : 3, id, text });
+	}
+
+	state.env.outline = outline;
 }
 
 /** Picks the sample to show for a key given the reader's context, with sensible fallbacks. */
@@ -151,6 +223,7 @@ function createMarkdown(): MarkdownItInstance {
 
 	md.inline.ruler.before("emphasis", "sym_ref", symRefRule);
 	md.block.ruler.before("paragraph", "sample_embed", sampleEmbedRule);
+	md.core.ruler.push("outline", outlineRule as unknown as Parameters<typeof md.core.ruler.push>[1]);
 
 	md.renderer.rules.sym_ref = (tokens, idx, _options, rawEnv) => {
 		const env = rawEnv as unknown as Env;
@@ -282,4 +355,19 @@ export function renderDocBody(body: string, ctx: RenderContext): string {
 	const env: Env = { ...ctx, counter: 0 };
 
 	return instance.render(body, env as unknown as MarkdownItEnv);
+}
+
+/**
+ * The `##` and `###` headings of a page body with the ids `renderDocBody` gives them. Independent of the reader
+ * context (headings never vary by language or version), so a view can compute it from the body alone and pre-render
+ * the table of contents.
+ */
+export function docOutline(body: string): OutlineHeading[] {
+	instance ??= createMarkdown();
+
+	const env: Env = { ...inlineDefaults, counter: 0 };
+
+	instance.parse(body, env as unknown as MarkdownItEnv);
+
+	return env.outline ?? [];
 }

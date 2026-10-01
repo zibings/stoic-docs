@@ -29,6 +29,20 @@ other records, so the bundle can omit the page entirely and still get a landing 
 
 `tessel.json` is a fictional data-fetching library used as fixture data. It is not a real API.
 
+`stoic.json` documents the real Stoic:PHP framework (`stoic/stoic`, `stoic/io`, `stoic/pdo`, `stoic/web`) as one
+library with a module per namespace and a version per *family* of tags (`v1.3` = core 1.3.1, io 1.3.1, pdo 1.3.4,
+web 1.3.16; `v1.4` = core 1.4.0, io 1.4.0, pdo 1.4.0, web 1.4.2). It is generated, not hand-edited: `stoic/build.php`
+archives each tag from the sibling checkouts, runs the PHP extractor over them, and merges the result with the prose
+in `stoic/content/` (pages, course, changes, module summaries). Rebuild it from the project root with
+
+```
+php fixtures/stoic/build.php --repos .. --out fixtures/stoic.json
+node .claude/skills/docs-bundle/scripts/validate-bundle.mjs fixtures/stoic.json
+```
+
+Source links for this bundle need `docs.sourceUrlPattern` set to `https://github.com/zibings/{path}#L{line}`, because
+each contract's `sourcePath` already carries the repository and tag (`stoic-php-web/blob/v1.4.2/Web/Stoic.php`).
+
 The field-by-field format reference, a writing guide, and a validator live in `.claude/skills/docs-bundle/`; that folder
 is what to hand an AI agent that should write a bundle for a project.
 

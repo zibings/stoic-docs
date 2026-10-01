@@ -8,7 +8,8 @@
 	<div v-else-if="error" class="shell-content"><p class="muted">Could not load this lesson: {{ error }}</p></div>
 	<div v-else-if="!data" class="shell-content"><p class="muted">Loading…</p></div>
 
-	<div v-else class="learn-layout" :class="{ 'learn-layout--no-course': !data.course }">
+	<div v-else class="learn-layout" :class="{ 'learn-layout--no-course': !data.course && !hasToc }">
+		<MobileToc v-if="!data.course && hasToc" class="learn-layout__mobile-toc" :headings="headings" :active-id="activeId" />
 		<details v-if="data.course" class="learn-layout__mobile-spine">
 			<summary class="learn-layout__mobile-summary">
 				<span class="mono">Lesson {{ data.course.currentLesson }} of {{ data.course.lessonCount }}</span>
@@ -18,6 +19,7 @@
 		</details>
 
 		<CourseSpine v-if="data.course" class="learn-layout__spine" :course="data.course" :is-done="progress.isLessonDone" />
+		<TocRail v-else-if="hasToc" class="learn-layout__spine" :headings="headings" :active-id="activeId" @browse="ui.openBrowse()" />
 
 		<article class="learn-layout__main">
 			<header class="learn-head">
@@ -28,7 +30,7 @@
 				<h1 class="learn-head__title">{{ data.page.title }}</h1>
 			</header>
 
-			<ProseBody :body="data.page.body" :context="renderContext" />
+			<ProseBody ref="prose" :body="data.page.body" :context="renderContext" />
 
 			<TryItCard v-if="step" :step="step" :total="steps.length" :done="stepDone" :language="context.effectiveLanguage" @done="markDone" @undo="undo" />
 			<div v-if="steps.length > 1" class="learn-steps-nav">
@@ -63,23 +65,29 @@ import { RouterLink } from "vue-router";
 import { docsApi } from "api/docs";
 import ClientOnly from "components/ClientOnly.vue";
 import CourseSpine from "components/learn/CourseSpine.vue";
+import MobileToc from "components/prose/MobileToc.vue";
+import TocRail from "components/prose/TocRail.vue";
 import TryItCard from "components/learn/TryItCard.vue";
 import Workspace from "components/learn/Workspace.vue";
 import WorkspaceSheet from "components/learn/WorkspaceSheet.vue";
 import ProseBody from "components/prose/ProseBody.vue";
 import { useDocsData } from "composables/useDocsData";
+import { useHeadingFollow } from "composables/useHeadingFollow";
 import { usePageMeta } from "composables/usePageMeta";
 import { useProseContext } from "composables/useProseContext";
 import { allStepsDone, currentStep, neighbors, workspaceTabs } from "learn/steps";
+import { docOutline } from "markdown/render";
 import { useContextStore } from "stores/context";
 import { useProgressStore } from "stores/progress";
 import { useTrailStore } from "stores/trail";
+import { useUiStore } from "stores/ui";
 
 const props = defineProps<{ version: string; course: string; lesson: string }>();
 
 const context = useContextStore();
 const progress = useProgressStore();
 const trail = useTrailStore();
+const ui = useUiStore();
 
 const key = computed(() => `page:${props.version}:learn/${props.lesson}`);
 const { data, error, notFound } = useDocsData(key, () => docsApi.page(props.version, "learn", props.lesson));
@@ -93,6 +101,14 @@ const versionLabel = computed(() => props.version);
 const symbols = computed(() => data.value?.symbols ?? []);
 const samples = computed(() => data.value?.samples ?? []);
 const renderContext = useProseContext(versionLabel, symbols, samples);
+
+// A lesson outside any course has no spine; its own headings fill the left column instead (see PageView).
+const headings = computed(() => (data.value ? docOutline(data.value.page.body) : []));
+const hasToc = computed(() => headings.value.length > 0);
+const headingIds = computed(() => headings.value.map((h) => h.id));
+const prose = ref<InstanceType<typeof ProseBody> | null>(null);
+const proseRoot = computed(() => prose.value?.root ?? null);
+const { activeId } = useHeadingFollow(proseRoot, headingIds);
 
 // Progress is per version and course; load on the client (the server has no storage).
 onMounted(() => progress.load(props.version, props.course));
@@ -176,6 +192,10 @@ watch(
 .learn-layout__mobile-spine,
 .learn-layout__sheet {
 	display: none;
+}
+
+.learn-layout__mobile-toc {
+	grid-column: 1 / -1;
 }
 
 .learn-head {

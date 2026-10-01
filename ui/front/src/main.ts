@@ -4,8 +4,10 @@ import "@fontsource/ibm-plex-mono/500.css";
 import "@fontsource/ibm-plex-mono/600.css";
 import "@fontsource-variable/newsreader/opsz.css";
 import "design/tokens.css";
+import "design/theme-dark.css";
 import "styles/base.css";
 import "styles/code.css";
+import "styles/rail.css";
 import "styles/sheet.css";
 
 import { createPinia } from "pinia";
@@ -19,6 +21,7 @@ import { installVersionGuard } from "./router";
 import routes from "./router/routes";
 import { useContextStore } from "stores/context";
 import { useSiteStore } from "stores/site";
+import { useThemeStore } from "stores/theme";
 
 export const createApp = ViteSSG(
 	App,
@@ -53,6 +56,7 @@ export const createApp = ViteSSG(
 		if (isClient) {
 			pinia.state.value = initialState.pinia ?? {};
 			useContextStore(pinia).hydrate();
+			useThemeStore(pinia).hydrate();
 		} else {
 			initialState.pinia = pinia.state.value;
 		}

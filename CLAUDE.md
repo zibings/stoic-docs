@@ -31,7 +31,11 @@ that follows scroll via IntersectionObserver on `data-symbol-ref` elements. ⌘K
 
 Visual system: warm off-white ground, near-black ink, one blue accent (new/added/focus/after), one orange
 (changed/breaking/before), dark pane for machine-truth content. IBM Plex Sans / IBM Plex Mono / Newsreader.
-Real `<button>`/`<a>`/`<input>`+`<label>`, 44px touch targets, 4.5:1 contrast. Dark theme not yet designed.
+Real `<button>`/`<a>`/`<input>`+`<label>`, 44px touch targets, 4.5:1 contrast. Dark theme: same warm ground / cool
+pane split with lighter ink and accents (`color.dark`, `color.paneDark`, `shadow.dark` in `ui/shared/design/tokens.json`,
+emitted to `design/theme-dark.css`, which only the public site imports; admin stays light). It follows
+`prefers-color-scheme` until the reader flips the header toggle, then is remembered in localStorage (`docs.theme`) and
+applied as `data-theme` on `<html>` (`stores/theme.ts`, plus an inline script in `ui/front/index.html` for first paint).
 
 ## Layout
 
@@ -60,6 +64,10 @@ Real `<button>`/`<a>`/`<input>`+`<label>`, 44px touch targets, 4.5:1 contrast. D
   stay; at 768px and below the tabs collapse into a mode-label button that opens Browse on that mode's tab. Every
   tappable control gets a 44px hit area (`--touch-target`), even when the visual is smaller. Use `100dvh` alongside
   `100vh` and pad fixed bottom sheets with `env(safe-area-inset-bottom)`.
+- Pages without a rail of their own (Do/Explain/Reference prose pages, lessons outside a course) get a sticky
+  "On this page" rail built from the body's `##`/`###` headings (`docOutline()` in `ui/shared/markdown/render.ts`,
+  which also gives those headings their ids; `components/prose/TocRail.vue`, `MobileToc.vue` below 1180px,
+  `useHeadingFollow` for the active entry). No headings means no rail. Shared rail styles live in `styles/rail.css`.
 - Vue views must derive state with `computed`, not `watch`, when it has to exist in pre-rendered HTML (watchers do
   not flush during SSR).
 - `web/.htaccess` turns `DirectorySlash` off so a pre-rendered `foo.html` beats a same-named `foo/` folder (mode
@@ -74,6 +82,12 @@ Real `<button>`/`<a>`/`<input>`+`<label>`, 44px touch targets, 4.5:1 contrast. D
   (`DocUsageScanner`) writes the scan report the upgrade view loads (`{tool, package, fromVersion, imports}`), reading
   namespaces and the installed version from the consumer's `composer.lock`. Follow-ups not done: replacing `web/sui`
   with the docs site, a JavaScript usage scanner, pages generated from OpenAPI descriptions.
+- `fixtures/stoic/` — the real content of this install: `build.php` regenerates `fixtures/stoic.json` from the four
+  `../stoic-php-*` checkouts (one tag per package per version family, see `fixtures/README.md`) plus the prose in
+  `content/` (PHP files returning bundle records; `helpers.php` has `page()`, `refPage()`, `sample()`). Edit the
+  content there, rebuild, validate, then `seed-docs.php --file fixtures/stoic.json` and `pnpm --dir ui/front zsf`.
+  Source links use `docs.sourceUrlPattern = https://github.com/zibings/{path}#L{line}` because `sourcePath` carries
+  `repo/blob/tag/`.
 - `.claude/skills/docs-bundle/` — agent-facing guide for writing a bundle for any project: `SKILL.md` (workflow),
   `reference/bundle-format.md` (every field the importer reads and every Markdown directive, derived from the code),
   `reference/writing-guide.md` (Diátaxis rules per mode), `scripts/validate-bundle.mjs` (no-dependency validator).
